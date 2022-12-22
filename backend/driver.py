@@ -7,10 +7,12 @@
 ################################################################################
 
 import os
+import csv
 import sys
 import cv2
 import json
 import time
+import qrcode
 import shutil
 import winsound
 import numpy as np
@@ -24,9 +26,15 @@ from datetime import datetime as dt
 
 from PySide2 import QtCore
 from PySide2.QtWidgets import *
-from PySide2.QtCore import (QPoint,Qt, QTimer)
-from PySide2.QtGui import (QColor, QPixmap, QImage)
+from PySide2.QtCore import *
+from PySide2.QtGui import *
+import requests
 
+from mail.send import *
+from mail.mail import Mail
+from mail.thread import QRCodeMailThread
+from model.generate_code import Student
+from scan_devices.camera import ActiveCameras
 from model.attendance import Attendance
 from alert.alert_dialog import *
 from program_dept.program_dept import *
@@ -62,12 +70,17 @@ class MainWindow(QMainWindow):
         #########################################################################################################
         self.ui.btn_home.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.home))
         self.ui.btn_search.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.search))
+        self.ui.btn_send_mail.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.mail))
         ##########################################################################################################
 
         ############################################################################################
+        self.create_program_data_dir()
         self.program_dept = Database()
         self.ui.btn_open_database.clicked.connect(lambda: self.program_dept.show())
         self.program_dept.combo_box(self.get_tables())
+
+        self.mail = Mail()
+        self.ui.btn_sender_details.clicked.connect(lambda: self.mail.show())
         ############################################################################################
 
         ############################################################################################
@@ -96,12 +109,123 @@ class MainWindow(QMainWindow):
         self.ui.contrast_value.setText(str(self.ui.contrast.value()))
         #################################################################################################
 
-        self.create_program_data_dir()
-        self.ui.btn_scan_range.clicked.connect(self.get_active_cameras)
+        self.ui.btn_scan_range.clicked.connect(self.camera_thread)
         self.ui.database_tables.addItems(self.get_tables())
         self.ui.btn_refresh.clicked.connect(self.refresh_tables)
+        self.ui.btn_load_data.clicked.connect(self.browse_files)
+        self.ui.btn_send_qr_mail.clicked.connect(self.send_student_mail)
         ##################################################################################################
 
+    def get_mail_content(self):
+        path = 'C:\\ProgramData\\iLecturers\\data\\email_details\\content.txt'
+        if os.path.exists(path):
+            with open(path,'r') as f:
+                details = f.read()
+            return details
+
+    def connected_to_internet(self,url='http://www.google.com/', timeout=5):
+        try:
+            _ = requests.head(url, timeout=timeout)
+            return True
+        except requests.ConnectionError:  
+            return False
+
+    def send_student_mail(self):
+        student_data_path = self.ui.student_data.text()
+        if student_data_path and self.connected_to_internet()==True:
+            self.pool = QThreadPool()
+            self.work = SendThread(self.generate_code_and_send)
+            self.pool.start(self.work)
+        else:
+            self.alert = AlertDialog()
+            self.alert.content("Oops! please provide the student data\nfile or check your connection...")
+            self.alert.show()
+
+    def generate_code_and_send(self):
+        self.threadPool = QThreadPool()
+        content = self.get_mail_content()
+        student_data_path = self.ui.student_data.text()
+        details = self.mail.get_email_details()
+        with open(student_data_path,'r') as data:
+            student_data = csv.reader(data)
+            student_list = []
+            for row in student_data:
+                student_list.append(row)
+                register = Student(
+                    firstname=row[0],
+                    middlename=row[1],
+                    lastname=row[2],
+                    reference=row[3],
+                    index_=row[4],
+                    program= row[5]
+                    )
+                student ={
+                    "firstname":register.firstname,
+                    "middlename":register.middlename,
+                    "lastname":register.lastname,
+                    "reference":register.index_,
+                    "index":register.reference,
+                    "program":register.program
+                    }
+                if self.connected_to_internet()==True:
+                    student_json=self.convert_to_json(student)
+                    image = qrcode.make(student_json)
+                    image_path='C:\\ProgramData\\iLecturers\\data\\qr_code\\'+register.index_+".png"
+                    image.save(image_path)
+                    content = self.get_mail_content()
+                    content=content.replace('name',row[2])
+                    self.worker = QRCodeMailThread(details,content,image_path,row[6])
+                    self.threadPool.start(self.worker)
+                    self.ui.label_notification_3.setText("Sending mails in progress...")      
+                else:
+                    self.alert = AlertDialog()
+                    self.alert.content("Oops! please check your internet\nconnection...")
+                    self.alert.show()
+            self.ui.label_notification_3.setText("Mail for valid addresses sent...")
+            
+    def convert_to_json(self, student:Student):
+        to_json = json.dumps(student)
+        return to_json
+
+    def browse_files(self): 
+        file_type = "CSV Files(*.csv)"   
+        path= QFileDialog.getOpenFileName(self, "Select File","C:\\Users\\BTC OMEN\\Documents",file_type)
+        if path:
+            self.ui.student_data.setText(path[0])
+            try:
+                with open(path[0],'r') as data:
+                    self.ui.label_notification_3.setText("Please the header was skipped...")
+                    student_data = csv.reader(data)
+                    next(student_data)
+                    student_list = []
+                    for row in student_data:
+                        student_list.append(row)
+                    if len(student_list):
+                        self.student_table(student_list)
+            except Exception as e:
+                print(str(e))
+            return path[0]
+
+    def student_table(self,details:list):
+        self.ui.load_mail_data_table.setAutoScroll(True)
+        self.ui.load_mail_data_table.setAutoScrollMargin(2)
+        self.ui.load_mail_data_table.setTabKeyNavigation(True)
+        self.ui.load_mail_data_table.setColumnWidth(0,350)
+        self.ui.load_mail_data_table.setColumnWidth(1,200)
+        self.ui.load_mail_data_table.setColumnWidth(2,200)
+        self.ui.load_mail_data_table.setColumnWidth(3,300)
+        self.ui.load_mail_data_table.setRowCount(len(details))
+        self.ui.load_mail_data_table.verticalHeader().setVisible(True)
+        row_count = 0
+        for data in details:
+            name = str(data[0]+'       '+data[1]+'      '+data[2])
+            self.ui.load_mail_data_table.setItem(row_count,0,QtWidgets.QTableWidgetItem(name))
+            self.ui.load_mail_data_table.setItem(row_count,1,QtWidgets.QTableWidgetItem(str(data[3])))
+            self.ui.load_mail_data_table.setItem(row_count,2,QtWidgets.QTableWidgetItem(str(data[4])))
+            self.ui.load_mail_data_table.setItem(row_count,3,QtWidgets.QTableWidgetItem(str(data[5])))
+            self.ui.load_mail_data_table.setItem(row_count,4,QtWidgets.QTableWidgetItem(str(data[6])))
+            row_count = row_count+1
+        
     def refresh_tables(self):
         self.ui.database_tables.clear()
         self.ui.database_tables.addItems(self.get_tables())
@@ -152,17 +276,20 @@ class MainWindow(QMainWindow):
             db.commit()
             return details
 
-    def get_active_cameras(self):
-        scan_range=self.ui.scan_range.text()
+    def get_active_cameras(self,camera:list):
+        self.ui.comboBox.clear()
+        self.ui.comboBox.addItems(camera)
+        count = [self.ui.comboBox.itemText(i) for i in range(self.ui.comboBox.count())]
+        self.ui.scan_range_label.setText("Active camera(s): "+str(len(count)))
+        self.ui.label_notification.setText("Done scanning for available cameras...")           
+
+    def camera_thread(self):
+        scan_range = self.ui.scan_range.text()
         if scan_range:
-            for camera in range(int(scan_range)):
-                capture = VideoCapture(camera)
-                valid_cameras = []
-                if capture.isOpened():
-                    valid_cameras.append(camera)
-                    data=[str(x) for x in valid_cameras]
-                    self.ui.comboBox.addItems(data)
-                    self.ui.scan_range_label.setText("Active camera(s): "+str(len(data)))
+            self.active = ActiveCameras(scan_range)
+            self.active.start()
+            self.active.cameras.connect(self.get_active_cameras)
+            self.ui.label_notification.setText("Scanning for available cameras...")
         else:
             self.alert_builder("Oops! no scan range provided...")
     
@@ -173,13 +300,41 @@ class MainWindow(QMainWindow):
            
     def create_program_data_dir(self):
         root_dir = 'C:\\ProgramData\\iLecturers\\data'
-        list =('csv_export','backup')
+        list =('csv_export','backup','qr_code','email_details')
         if not os.path.exists(root_dir):
             os.makedirs(root_dir)
         for item in list:
             path = os.path.join(root_dir,item)
             if not os.path.exists(path):
                 os.mkdir(path)
+        self.create_files()
+
+    def create_files(self):
+        details_path =Path('C:\\ProgramData\\iLecturers\\data\\email_details\\detail.txt')
+        details_path.touch(exist_ok=True)
+        d_file = open(details_path)
+        if os.path.exists(details_path):
+            with open(details_path,'a+') as d_file:
+                if os.path.getsize(details_path)==0:
+                    d_file.write("Subject,example@gmail.mail,Sender,Password")
+            d_file.close() 
+
+        content = """
+        Hello name,
+                Please attached to this message is your
+            attendance code. Please keep it safe as you 
+            will need this everytime you would want to 
+            access the facility. 
+                Attend Today, Acheive Tomorrow!
+                                            Thank you! """
+        content_path =Path('C:\\ProgramData\\iLecturers\\data\\email_details\\content.txt')
+        content_path.touch(exist_ok=True)
+        content_file = open(content_path)
+        if os.path.exists(content_path):
+            with open(content_path,'a+') as content_file:
+                if os.path.getsize(content_path)==0:
+                    content_file.write(content)
+            content_file.close() 
 
     def export_data_to_csv(self):
         table=self.ui.tableWidget.item(0,0)
@@ -306,12 +461,12 @@ class MainWindow(QMainWindow):
     def retreive_student_details(self,data):
         data= json.loads(data)
         self.ui.firstname.setText(data['firstname'])
-        self.ui.middlename.setText(data['middle_name'])
+        self.ui.middlename.setText(data['middlename'])
         self.ui.lastname.setText(data['lastname'])
-        self.ui.refrence.setText(str(data['reference']))
-        self.ui.index.setText(str(data['index']))
+        self.ui.refrence.setText(data['reference'])
+        self.ui.index.setText(data['index'])
         self.ui.program.setText(data['program'])
-        self.ui.image.setPixmap(QPixmap.fromImage(r'backend\\images\\assets\\img.jpg'))
+        self.ui.image.setPixmap(QPixmap.fromImage('D:\\Targets\\lecturers\\backend\\images\\assets\\img.jpg'))
         self.ui.image.setScaledContents(True)
                         
     def mark_attendance_db(self):
@@ -337,7 +492,7 @@ class MainWindow(QMainWindow):
                     details.append(detail)
                 db.commit() 
             if not details:
-                my_cursor.execute("INSERT INTO tb_attendance(student_name,student_index,student_reference,student_program,date_stamp,time_stamp) VALUES(?,?,?,?,?,?)",
+                my_cursor.execute("INSERT INTO "+table+"(student_name,student_index,student_reference,student_program,date_stamp,time_stamp) VALUES(?,?,?,?,?,?)",
                 (attendance.name,attendance.index,attendance.reference,attendance.program,attendance.date,attendance.time_in))
                 db.commit()
             elif details:
