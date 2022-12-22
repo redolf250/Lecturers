@@ -231,7 +231,7 @@ class MainWindow(QMainWindow):
         self.ui.database_tables.addItems(self.get_tables())
 
     def get_tables(self):
-        con = sqlite3.connect(r'backend\\sqlite\\attendance_system.db')
+        con = sqlite3.connect('D:\\Targets\\lecturers\\backend\\sqlite\\attendance_system.db')
         cursor = con.cursor()
         sql = """SELECT name FROM sqlite_master WHERE type = 'table';"""
         my_cursor = cursor.execute(sql)
