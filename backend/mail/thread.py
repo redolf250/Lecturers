@@ -27,4 +27,7 @@ class QRCodeMailThread(QRunnable):
         with smtplib.SMTP(host='smtp.gmail.com', port=587) as server:
             server.starttls()
             server.login(self.details[1],self.details[3])
-            server.send_message(message)
+            try:
+                server.send_message(message)
+            except:   
+                pass
