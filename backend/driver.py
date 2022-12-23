@@ -549,6 +549,7 @@ class MainWindow(QMainWindow):
         thickness = 2
         rect_thickness = 1
         color = (255,255,0)
+        
         ret,self.frame = self.capture.read()
         self.frame = cv2.flip(self.frame,1)
 
@@ -651,7 +652,6 @@ class MainWindow(QMainWindow):
         delta = QPoint(event.globalPos() - self.oldPosition)
         self.move(self.x() + delta.x(), self.y() + delta.y())
         self.oldPosition = event.globalPos()    
- 
     
 class Splash_screen(QMainWindow):
     def __init__(self, **kwargs):
