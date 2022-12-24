@@ -470,7 +470,7 @@ class MainWindow(QMainWindow):
         self.ui.image.setScaledContents(True)
                         
     def mark_attendance_db(self):
-        db = sqlite3.connect(r'backend\\sqlite\\attendance_system.db')
+        db = sqlite3.connect('D:\\Targets\\lecturers\\backend\\sqlite\\attendance_system.db')
         my_cursor = db.cursor()
         table = self.ui.database_tables.currentText()
         name = self.ui.firstname.text()+" "+self.ui.middlename.text()+" "+self.ui.lastname.text()
@@ -501,7 +501,7 @@ class MainWindow(QMainWindow):
             else:
                 self.show_info("Oops! something went wrong...")
         db.close()
- 
+
     def start_webcam(self):
         if self.ui.camera_ip.text() or self.ui.comboBox.currentText():
             ip_address = self.ui.camera_ip.text()
