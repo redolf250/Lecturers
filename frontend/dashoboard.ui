@@ -450,7 +450,7 @@ QPushButton:hover{
              <property name="minimumSize">
               <size>
                <width>0</width>
-               <height>300</height>
+               <height>400</height>
               </size>
              </property>
              <property name="maximumSize">
@@ -568,6 +568,56 @@ QPushButton:pressed{
                 <property name="icon">
                  <iconset resource="../resource/asset.qrc">
                   <normaloff>:/icons/asset/search.svg</normaloff>:/icons/asset/search.svg</iconset>
+                </property>
+                <property name="iconSize">
+                 <size>
+                  <width>40</width>
+                  <height>40</height>
+                 </size>
+                </property>
+                <property name="checkable">
+                 <bool>true</bool>
+                </property>
+                <property name="flat">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="btn_active_count">
+                <property name="minimumSize">
+                 <size>
+                  <width>0</width>
+                  <height>70</height>
+                 </size>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>16777215</width>
+                  <height>70</height>
+                 </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">QPushButton{
+	color: rgb(255, 255, 255);
+	border: 0px solid;
+}
+
+QPushButton:hover{
+	border-left: 3px solid;
+	border-left-color: rgb(0, 170, 255);
+}
+
+QPushButton:pressed{
+	border-left-color: rgb(255, 255, 255);
+}</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset resource="../resource/asset.qrc">
+                  <normaloff>:/icons/asset/users.svg</normaloff>:/icons/asset/users.svg</iconset>
                 </property>
                 <property name="iconSize">
                  <size>
@@ -2254,6 +2304,346 @@ QLineEdit:focus{
                </item>
               </layout>
              </widget>
+             <widget class="QWidget" name="active">
+              <layout class="QVBoxLayout" name="verticalLayout_10">
+               <item>
+                <widget class="QFrame" name="frame_10">
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>90</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>90</height>
+                  </size>
+                 </property>
+                 <property name="frameShape">
+                  <enum>QFrame::StyledPanel</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <widget class="QLineEdit" name="active_count_filepath">
+                  <property name="geometry">
+                   <rect>
+                    <x>20</x>
+                    <y>20</y>
+                    <width>611</width>
+                    <height>41</height>
+                   </rect>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QLineEdit{
+	color: rgb(255, 255, 255);
+	border: 2px solid  rgb(45, 45, 45);
+	border-radius:10px;
+	padding-left: 10px;
+}
+
+QLineEdit:hover{
+	border:2px solid rgb(35, 35, 35);
+}
+
+QLineEdit:focus{
+	border:2px solid rgb(255, 255, 255);
+}</string>
+                  </property>
+                  <property name="placeholderText">
+                   <string>Filename?</string>
+                  </property>
+                  <property name="clearButtonEnabled">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                 <widget class="QPushButton" name="btn_active_count_save">
+                  <property name="geometry">
+                   <rect>
+                    <x>650</x>
+                    <y>20</y>
+                    <width>181</width>
+                    <height>41</height>
+                   </rect>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton{
+	color: rgb(255, 255, 255);
+	background-color: rgb(45, 45, 45);
+	border:none;
+	border-radius: 10px;
+}
+
+QPushButton:hover{
+	border-radius: 20px;
+}
+
+QPushButton:pressed{
+	border: 2px solid rgb(255,255,255);	
+}</string>
+                  </property>
+                  <property name="text">
+                   <string>Save</string>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="../resource/asset.qrc">
+                    <normaloff>:/icons/asset/save.svg</normaloff>:/icons/asset/save.svg</iconset>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>30</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="flat">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                 <widget class="QLabel" name="label_31">
+                  <property name="geometry">
+                   <rect>
+                    <x>0</x>
+                    <y>0</y>
+                    <width>1431</width>
+                    <height>81</height>
+                   </rect>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Arial</family>
+                    <pointsize>11</pointsize>
+                    <weight>75</weight>
+                    <bold>true</bold>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QLabel{
+	color: rgb(255, 255, 255);
+	background-color: rgb(35, 35, 35);
+	border-radius: 10px;
+	padding-left:10px;
+}</string>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                  </property>
+                 </widget>
+                 <widget class="QPushButton" name="btn_active_load_data">
+                  <property name="geometry">
+                   <rect>
+                    <x>1230</x>
+                    <y>20</y>
+                    <width>181</width>
+                    <height>41</height>
+                   </rect>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QPushButton{
+	color: rgb(255, 255, 255);
+	background-color: rgb(45, 45, 45);
+	border:none;
+	border-radius: 10px;
+}
+
+QPushButton:hover{
+	border-radius: 20px;
+}
+
+QPushButton:pressed{
+	border: 2px solid rgb(255,255,255);	
+}</string>
+                  </property>
+                  <property name="text">
+                   <string>Load</string>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="../resource/asset.qrc">
+                    <normaloff>:/icons/asset/download.svg</normaloff>:/icons/asset/download.svg</iconset>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>30</width>
+                    <height>30</height>
+                   </size>
+                  </property>
+                  <property name="flat">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                 <widget class="QComboBox" name="database_tables_active">
+                  <property name="geometry">
+                   <rect>
+                    <x>850</x>
+                    <y>20</y>
+                    <width>361</width>
+                    <height>41</height>
+                   </rect>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>41</height>
+                   </size>
+                  </property>
+                  <property name="maximumSize">
+                   <size>
+                    <width>16777215</width>
+                    <height>38</height>
+                   </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <pointsize>10</pointsize>
+                   </font>
+                  </property>
+                  <property name="styleSheet">
+                   <string notr="true">QComboBox{
+	color: rgb(255, 255, 255);
+	border: 2px solid rgb(45, 45, 45);
+	padding-left:10px;
+	border-radius: 5px;
+}</string>
+                  </property>
+                  <property name="frame">
+                   <bool>false</bool>
+                  </property>
+                 </widget>
+                 <zorder>label_31</zorder>
+                 <zorder>active_count_filepath</zorder>
+                 <zorder>btn_active_count_save</zorder>
+                 <zorder>btn_active_load_data</zorder>
+                 <zorder>database_tables_active</zorder>
+                </widget>
+               </item>
+               <item>
+                <widget class="QFrame" name="frame_11">
+                 <property name="frameShape">
+                  <enum>QFrame::NoFrame</enum>
+                 </property>
+                 <property name="frameShadow">
+                  <enum>QFrame::Raised</enum>
+                 </property>
+                 <layout class="QVBoxLayout" name="verticalLayout_14">
+                  <property name="spacing">
+                   <number>0</number>
+                  </property>
+                  <property name="leftMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="topMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="rightMargin">
+                   <number>0</number>
+                  </property>
+                  <property name="bottomMargin">
+                   <number>0</number>
+                  </property>
+                  <item>
+                   <widget class="QTableWidget" name="tableWidget_count">
+                    <property name="styleSheet">
+                     <string notr="true">QTableWidget{
+	background-color: rgb(45, 45, 45);
+	color: rgb(255, 255, 255);
+}</string>
+                    </property>
+                    <property name="frameShape">
+                     <enum>QFrame::NoFrame</enum>
+                    </property>
+                    <property name="editTriggers">
+                     <set>QAbstractItemView::NoEditTriggers</set>
+                    </property>
+                    <property name="sortingEnabled">
+                     <bool>true</bool>
+                    </property>
+                    <attribute name="horizontalHeaderCascadingSectionResizes">
+                     <bool>true</bool>
+                    </attribute>
+                    <attribute name="horizontalHeaderDefaultSectionSize">
+                     <number>280</number>
+                    </attribute>
+                    <attribute name="horizontalHeaderShowSortIndicator" stdset="0">
+                     <bool>true</bool>
+                    </attribute>
+                    <attribute name="horizontalHeaderStretchLastSection">
+                     <bool>true</bool>
+                    </attribute>
+                    <column>
+                     <property name="text">
+                      <string>Name</string>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <pointsize>10</pointsize>
+                      </font>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>Index</string>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <pointsize>10</pointsize>
+                      </font>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>Reference</string>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <pointsize>10</pointsize>
+                      </font>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>Program</string>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <pointsize>10</pointsize>
+                      </font>
+                     </property>
+                    </column>
+                    <column>
+                     <property name="text">
+                      <string>Appearance</string>
+                     </property>
+                     <property name="font">
+                      <font>
+                       <pointsize>10</pointsize>
+                      </font>
+                     </property>
+                    </column>
+                   </widget>
+                  </item>
+                 </layout>
+                </widget>
+               </item>
+              </layout>
+             </widget>
              <widget class="QWidget" name="search">
               <layout class="QHBoxLayout" name="horizontalLayout_5">
                <property name="spacing">
@@ -3567,6 +3957,9 @@ QPushButton:pressed{
                        </property>
                        <property name="frameShape">
                         <enum>QFrame::NoFrame</enum>
+                       </property>
+                       <property name="editTriggers">
+                        <set>QAbstractItemView::NoEditTriggers</set>
                        </property>
                        <attribute name="horizontalHeaderDefaultSectionSize">
                         <number>250</number>
