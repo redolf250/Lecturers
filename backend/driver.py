@@ -71,6 +71,7 @@ class MainWindow(QMainWindow):
         self.ui.btn_home.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.home))
         self.ui.btn_search.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.search))
         self.ui.btn_send_mail.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.mail))
+        self.ui.btn_active_count.clicked.connect(lambda: self.ui.stackedWidget.setCurrentWidget(self.ui.active))
         ##########################################################################################################
 
         ############################################################################################
@@ -111,11 +112,63 @@ class MainWindow(QMainWindow):
 
         self.ui.btn_scan_range.clicked.connect(self.camera_thread)
         self.ui.database_tables.addItems(self.get_tables())
+        self.ui.database_tables_active.addItems(self.get_tables())
         self.ui.btn_refresh.clicked.connect(self.refresh_tables)
         self.ui.btn_load_data.clicked.connect(self.browse_files)
         self.ui.btn_send_qr_mail.clicked.connect(self.send_student_mail)
+        self.ui.btn_active_load_data.clicked.connect(self.load_active_count)
+        self.ui.btn_active_count_save.clicked.connect(self.save_active_count_data)
         ##################################################################################################
+    def load_active_count(self):
+        table = self.ui.database_tables_active.currentText()
+        details = self.query_database("SELECT DISTINCT student_reference FROM "+table)
+        student_list = []
+        for student_reference in range(len(details)):
+            result= self.query_database("SELECT student_name,student_index,student_reference,student_program,"
+            +"COUNT(student_reference) as active FROM tb_attendance WHERE student_reference="
+            +details[student_reference][0]+" ORDER BY student_name DESC")
+            student_list.append(result[0])
+            self.active_count_table(student_list)
+        return student_list
 
+    def active_count_table(self,details):
+        self.ui.tableWidget_count.setAutoScroll(True)
+        self.ui.tableWidget_count.setAutoScrollMargin(2)
+        self.ui.tableWidget_count.setTabKeyNavigation(True)
+        self.ui.tableWidget_count.setRowCount(len(details))
+        self.ui.tableWidget_count.setColumnWidth(0,400)
+        self.ui.tableWidget_count.setColumnWidth(1,200)
+        self.ui.tableWidget_count.setColumnWidth(2,200)
+        self.ui.tableWidget_count.setColumnWidth(3,400)
+        self.ui.tableWidget_count.setColumnWidth(4,80)
+        self.ui.tableWidget_count.verticalHeader().setVisible(True)
+        row_count = 0
+        for data in details:
+            self.ui.tableWidget_count.setItem(row_count,0,QtWidgets.QTableWidgetItem(str(data[0])))
+            self.ui.tableWidget_count.setItem(row_count,1,QtWidgets.QTableWidgetItem(str(data[1])))
+            self.ui.tableWidget_count.setItem(row_count,2,QtWidgets.QTableWidgetItem(str(data[2])))
+            self.ui.tableWidget_count.setItem(row_count,3,QtWidgets.QTableWidgetItem(str(data[3])))
+            self.ui.tableWidget_count.setItem(row_count,4,QtWidgets.QTableWidgetItem(str(data[4])))
+            row_count = row_count+1
+
+    def save_active_count_data(self):
+        table=self.ui.tableWidget_count.item(0,0)
+        filename = self.ui.active_count_filepath.text()
+        date=dt.now().strftime('_%d_%B_%Y-%I_%M_%S_%p')
+        path = 'C:\\ProgramData\\iLecturers\\data\\csv_export\\'+filename+date+'.csv'
+        if table and filename:
+            details=self.load_active_count()
+            data = pd.DataFrame(details)
+            data.to_csv(path,sep=',',index=False,
+            header=['Name','Index','Reference','Program','Appearance'])
+            self.alert = AlertDialog()
+            self.alert.content("Hey! data to exported successfully...")
+            self.alert.show()
+        else:
+            self.alert = AlertDialog()
+            self.alert.content("Oops! you have no data to export\nor provide valid filename...")
+            self.alert.show()
+    
     def get_mail_content(self):
         path = 'C:\\ProgramData\\iLecturers\\data\\email_details\\content.txt'
         if os.path.exists(path):
@@ -351,11 +404,11 @@ class MainWindow(QMainWindow):
             self.alert.show()
         else:
             self.alert = AlertDialog()
-            self.alert.content("Oops! you have no data to export\nor provide filename...")
+            self.alert.content("Oops! you have no data to export\nor provide valid filename...")
             self.alert.show()
         
     def query_database(self, query: str):
-        db = sqlite3.connect(r'backend\\sqlite\\attendance_system.db')
+        db = sqlite3.connect('D:\\Targets\\lecturers\\backend\\sqlite\\attendance_system.db')
         my_cursor = db.cursor()
         details = []
         cursor = my_cursor.execute(query)
