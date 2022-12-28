@@ -1,5 +1,7 @@
 
 import sqlite3
+from datetime import datetime as dt
+
 from PySide2 import QtCore, QtWidgets
 from PySide2.QtGui import (QColor)
 from PySide2.QtWidgets import *
@@ -38,26 +40,29 @@ class Database(QtWidgets.QDialog):
     
     def create_table(self):
         data = self.ui.add_program.text()
-        db = sqlite3.connect(r'backend\\sqlite\\attendance_system.db')
+        db = sqlite3.connect('D:\\Targets\\lecturers\\backend\\sqlite\\attendance_system.db')
         cursor = db.cursor()
         try:
             if self.ui.add_program.text():
-                table_name = "tb_"+data
+                year=str(dt.now().date().strftime("%Y"))
+                table_name = "tb_"+data+"_"+year
                 cursor.execute("CREATE TABLE IF NOT EXISTS "+table_name+"(id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,student_name TEXT, student_index TEXT, student_reference TEXT, student_program TEXT,date_stamp TEXT, time_stamp TEXT)")
                 db.commit()
                 self.ui.label_notification.setText("Table created successfully...")
+                self.refresh()
             else:
                 self.ui.label_notification.setText("Oops! no table name provided...")
         except Exception as e:
             self.ui.label_notification.setText(str(e))
 
     def drop_table(self):
-        db = sqlite3.connect(r'backend\\sqlite\\attendance_system.db')
+        db = sqlite3.connect('D:\\Targets\\lecturers\\backend\\sqlite\\attendance_system.db')
         cursor = db.cursor()
         try:
             table=self.ui.database_tables.currentText()
             cursor.execute("DROP TABLE IF EXISTS "+table)
             db.commit()
+            self.refresh()
             self.ui.label_notification.setText("Table removed successfully...")
         except Exception as e:
             self.ui.label_notification.setText(str(e))
