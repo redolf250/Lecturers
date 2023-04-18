@@ -1,13 +1,7 @@
-import os
-import smtplib
-from pathlib import Path
-from email.mime.text import MIMEText
-from email.mime.image import MIMEImage
-from email.mime.multipart import MIMEMultipart
 
-from PySide2.QtWidgets import *
-from PySide2.QtCore import *
-from PySide2.QtGui import *
+from packages.pyqt import *
+from packages.system import *
+from packages.mail_lib import *
 
 class QRCodeMailThread(QRunnable):
     def __init__(self,details:list,mail_content,file_path,receiver):

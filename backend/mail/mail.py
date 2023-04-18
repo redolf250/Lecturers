@@ -1,17 +1,10 @@
+from packages.pyqt import *
+from packages.system import *
+from packages.ui_files import *
 
-import os
-import requests
-
-from PySide2 import QtCore, QtWidgets
-from PySide2.QtGui import (QColor)
-from mail.ui_mail import Ui_Mail
-from PySide2.QtWidgets import *
-from PySide2.QtCore import *
-from PySide2.QtGui import *
-
-class Mail(QtWidgets.QDialog):
+class Mail(QDialog):
     def __init__(self):
-        QtWidgets.QDialog.__init__(self)
+        QDialog.__init__(self)
         self.ui_mail = Ui_Mail()
         self.ui_mail.setupUi(self)
         self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
@@ -52,16 +45,17 @@ class Mail(QtWidgets.QDialog):
         return subject, from_email, from_, password
 
     def set_sender_details(self):
-        details=self.get_details()
-        self.ui_mail.email_from.setText(details[2])
-        self.ui_mail.email_sender.setText(details[1])
-        self.ui_mail.email_subject.setText(details[0])
-        self.ui_mail.sender_password.setText(details[3])
+        details=self.load_data('C:\\ProgramData\\iAttend\\data\\email_details\\details.json')
+        self.ui_mail.email_from.setText(details['sender'])
+        self.ui_mail.email_sender.setText(details['mail'])
+        self.ui_mail.email_subject.setText(details['subject'])
+        self.ui_mail.sender_password.setText(details['password'])
 
-    def get_details(self):
-        path = 'C:\\ProgramData\\iLecturers\\data\\email_details\\detail.txt'
-        if os.path.exists(path):
-            with open(path,'r') as f:
-                details = f.read().split(',')
-            return details
-   
+    def load_data(self,resource_path):
+        with open(resource_path,'r') as f:
+            data = f.read()
+            try:
+                return json.loads(data)
+            except Exception as e:
+                pass
+

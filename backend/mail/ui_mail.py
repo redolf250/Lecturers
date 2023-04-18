@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'maileambxm.ui'
+## Form generated from reading UI file 'mailWUObBT.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.14.1
 ##
@@ -156,7 +156,7 @@ class Ui_Mail(object):
         self.sender_password.setStyleSheet(u"QLineEdit{\n"
 "	color: rgb(255, 255, 255);\n"
 "	border: 2px solid  rgb(45, 45, 45);\n"
-"	border-radius:15px;\n"
+"	border-radius:10px;\n"
 "	padding-left: 50px;\n"
 "}\n"
 "\n"
@@ -178,7 +178,7 @@ class Ui_Mail(object):
         self.email_subject.setStyleSheet(u"QLineEdit{\n"
 "	color: rgb(255, 255, 255);\n"
 "	border: 2px solid  rgb(45, 45, 45);\n"
-"	border-radius:15px;\n"
+"	border-radius:10px;\n"
 "	padding-left: 45px;\n"
 "}\n"
 "\n"
@@ -199,7 +199,7 @@ class Ui_Mail(object):
         self.email_sender.setStyleSheet(u"QLineEdit{\n"
 "	color: rgb(255, 255, 255);\n"
 "	border: 2px solid  rgb(45, 45, 45);\n"
-"	border-radius:15px;\n"
+"	border-radius:10px;\n"
 "	padding-left: 50px;\n"
 "}\n"
 "\n"
@@ -220,7 +220,7 @@ class Ui_Mail(object):
         self.email_from.setStyleSheet(u"QLineEdit{\n"
 "	color: rgb(255, 255, 255);\n"
 "	border: 2px solid  rgb(45, 45, 45);\n"
-"	border-radius:15px;\n"
+"	border-radius:10px;\n"
 "	padding-left: 45px;\n"
 "}\n"
 "\n"
@@ -268,7 +268,7 @@ class Ui_Mail(object):
     def retranslateUi(self, Mail):
         Mail.setWindowTitle(QCoreApplication.translate("Mail", u"Dialog", None))
         self.label.setText("")
-        self.label_2.setText(QCoreApplication.translate("Mail", u"Email Application Data", None))
+        self.label_2.setText(QCoreApplication.translate("Mail", u"Sender Details", None))
         self.btn_minimize.setText("")
         self.btn_maximize.setText("")
         self.btn_close.setText("")
