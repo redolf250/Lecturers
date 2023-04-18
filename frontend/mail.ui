@@ -143,7 +143,7 @@
 }</string>
               </property>
               <property name="text">
-               <string>Email Application Data</string>
+               <string>Sender Details</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
@@ -323,7 +323,7 @@ QPushButton:hover{
              <string notr="true">QLineEdit{
 	color: rgb(255, 255, 255);
 	border: 2px solid  rgb(45, 45, 45);
-	border-radius:15px;
+	border-radius:10px;
 	padding-left: 50px;
 }
 
@@ -375,7 +375,7 @@ QLineEdit:focus{
              <string notr="true">QLineEdit{
 	color: rgb(255, 255, 255);
 	border: 2px solid  rgb(45, 45, 45);
-	border-radius:15px;
+	border-radius:10px;
 	padding-left: 45px;
 }
 
@@ -424,7 +424,7 @@ QLineEdit:focus{
              <string notr="true">QLineEdit{
 	color: rgb(255, 255, 255);
 	border: 2px solid  rgb(45, 45, 45);
-	border-radius:15px;
+	border-radius:10px;
 	padding-left: 50px;
 }
 
@@ -473,7 +473,7 @@ QLineEdit:focus{
              <string notr="true">QLineEdit{
 	color: rgb(255, 255, 255);
 	border: 2px solid  rgb(45, 45, 45);
-	border-radius:15px;
+	border-radius:10px;
 	padding-left: 45px;
 }
 
