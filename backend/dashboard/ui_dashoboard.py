@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'dashoboardwnwsyl.ui'
+## Form generated from reading UI file 'dashoboardeXqlQE.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.14.1
 ##
@@ -9,7 +9,7 @@
 ################################################################################
 
 from PySide2.QtCore import (QCoreApplication, QMetaObject, QObject, QPoint,
-    QRect, QSize, QUrl, Qt)
+    QRect, QSize, QUrl, Qt,QDateTime,QDate,QTime)
 from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont,
     QFontDatabase, QIcon, QLinearGradient, QPalette, QPainter, QPixmap,
     QRadialGradient)
@@ -21,17 +21,17 @@ class Ui_dashboard(object):
     def setupUi(self, dashboard):
         if dashboard.objectName():
             dashboard.setObjectName(u"dashboard")
-        dashboard.resize(1520, 1000)
-        dashboard.setMinimumSize(QSize(1500, 1000))
+        dashboard.resize(1339, 869)
+        dashboard.setMinimumSize(QSize(1339, 869))
         dashboard.setStyleSheet(u"background-color: rgb(255, 255, 255);")
         self.centralwidget = QWidget(dashboard)
         self.centralwidget.setObjectName(u"centralwidget")
-        self.centralwidget.setMinimumSize(QSize(1500, 1000))
+        self.centralwidget.setMinimumSize(QSize(1200, 800))
         self.centralwidget.setStyleSheet(u"")
         self.drop_shadow_layout = QFrame(self.centralwidget)
         self.drop_shadow_layout.setObjectName(u"drop_shadow_layout")
-        self.drop_shadow_layout.setGeometry(QRect(0, 0, 1545, 1000))
-        self.drop_shadow_layout.setMinimumSize(QSize(1280, 1000))
+        self.drop_shadow_layout.setGeometry(QRect(0, 0, 1361, 871))
+        self.drop_shadow_layout.setMinimumSize(QSize(1200, 800))
         self.drop_shadow_layout.setStyleSheet(u"")
         self.drop_shadow_layout.setFrameShape(QFrame.NoFrame)
         self.drop_shadow_layout.setFrameShadow(QFrame.Raised)
@@ -50,7 +50,7 @@ class Ui_dashboard(object):
         self.title_bar.setFrameShadow(QFrame.Raised)
         self.horizontalLayout = QHBoxLayout(self.title_bar)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.horizontalLayout.setContentsMargins(0, 0, 20, 0)
+        self.horizontalLayout.setContentsMargins(0, 0, 15, 0)
         self.other_fields = QFrame(self.title_bar)
         self.other_fields.setObjectName(u"other_fields")
         self.other_fields.setFrameShape(QFrame.NoFrame)
@@ -114,8 +114,8 @@ class Ui_dashboard(object):
 
         self.controls_frame = QFrame(self.title_bar)
         self.controls_frame.setObjectName(u"controls_frame")
-        self.controls_frame.setMinimumSize(QSize(100, 0))
-        self.controls_frame.setMaximumSize(QSize(100, 16777215))
+        self.controls_frame.setMinimumSize(QSize(87, 0))
+        self.controls_frame.setMaximumSize(QSize(87, 16777215))
         self.controls_frame.setFrameShape(QFrame.NoFrame)
         self.controls_frame.setFrameShadow(QFrame.Raised)
         self.btn_maximize = QPushButton(self.controls_frame)
@@ -192,12 +192,12 @@ class Ui_dashboard(object):
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 3)
         self.frame = QFrame(self.menu_frame)
         self.frame.setObjectName(u"frame")
-        self.frame.setMinimumSize(QSize(0, 400))
+        self.frame.setMinimumSize(QSize(0, 350))
         self.frame.setMaximumSize(QSize(16777215, 300))
         self.frame.setFrameShape(QFrame.NoFrame)
         self.frame.setFrameShadow(QFrame.Raised)
         self.verticalLayout = QVBoxLayout(self.frame)
-        self.verticalLayout.setSpacing(20)
+        self.verticalLayout.setSpacing(10)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.verticalLayout.setContentsMargins(0, -1, 0, -1)
         self.btn_home = QPushButton(self.frame)
@@ -313,29 +313,6 @@ class Ui_dashboard(object):
 
         self.verticalLayout_3.addWidget(self.frame, 0, Qt.AlignTop)
 
-        self.btn_help = QPushButton(self.menu_frame)
-        self.btn_help.setObjectName(u"btn_help")
-        self.btn_help.setMinimumSize(QSize(0, 70))
-        self.btn_help.setMaximumSize(QSize(16777215, 70))
-        self.btn_help.setStyleSheet(u"QPushButton{\n"
-"	color: rgb(255, 255, 255);\n"
-"	border: 0px solid;\n"
-"    padding-left:5px;\n"
-"}\n"
-"\n"
-"\n"
-"\n"
-"QPushButton:pressed{\n"
-"	border-left-color: rgb(255, 255, 255);\n"
-"}")
-        icon4 = QIcon()
-        icon4.addFile(u":/icons/asset/help-circle.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_help.setIcon(icon4)
-        self.btn_help.setIconSize(QSize(40, 40))
-        self.btn_help.setFlat(True)
-
-        self.verticalLayout_3.addWidget(self.btn_help)
-
 
         self.horizontalLayout_3.addWidget(self.menu_frame)
 
@@ -377,7 +354,7 @@ class Ui_dashboard(object):
         self.info_frame.setFrameShadow(QFrame.Raised)
         self.image = QLabel(self.info_frame)
         self.image.setObjectName(u"image")
-        self.image.setGeometry(QRect(20, 30, 261, 281))
+        self.image.setGeometry(QRect(20, 30, 251, 281))
         font2 = QFont()
         font2.setFamily(u"Arial")
         font2.setPointSize(14)
@@ -393,7 +370,7 @@ class Ui_dashboard(object):
         self.image.setAlignment(Qt.AlignCenter)
         self.firstname = QLabel(self.info_frame)
         self.firstname.setObjectName(u"firstname")
-        self.firstname.setGeometry(QRect(290, 30, 191, 41))
+        self.firstname.setGeometry(QRect(280, 30, 201, 41))
         font3 = QFont()
         font3.setFamily(u"MS Shell Dlg 2")
         font3.setPointSize(10)
@@ -410,7 +387,7 @@ class Ui_dashboard(object):
         self.firstname.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
         self.middlename = QLabel(self.info_frame)
         self.middlename.setObjectName(u"middlename")
-        self.middlename.setGeometry(QRect(290, 90, 191, 41))
+        self.middlename.setGeometry(QRect(280, 90, 201, 41))
         self.middlename.setFont(font3)
         self.middlename.setStyleSheet(u"QLabel{\n"
 "	color: rgb(255, 255, 255);\n"
@@ -422,7 +399,7 @@ class Ui_dashboard(object):
         self.middlename.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
         self.lastname = QLabel(self.info_frame)
         self.lastname.setObjectName(u"lastname")
-        self.lastname.setGeometry(QRect(290, 150, 191, 41))
+        self.lastname.setGeometry(QRect(280, 150, 201, 41))
         self.lastname.setFont(font3)
         self.lastname.setStyleSheet(u"QLabel{\n"
 "	color: rgb(255, 255, 255);\n"
@@ -438,7 +415,7 @@ class Ui_dashboard(object):
         self.lastname.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
         self.refrence = QLabel(self.info_frame)
         self.refrence.setObjectName(u"refrence")
-        self.refrence.setGeometry(QRect(290, 210, 191, 41))
+        self.refrence.setGeometry(QRect(280, 210, 201, 41))
         self.refrence.setFont(font3)
         self.refrence.setStyleSheet(u"QLabel{\n"
 "	color: rgb(255, 255, 255);\n"
@@ -450,7 +427,7 @@ class Ui_dashboard(object):
         self.refrence.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
         self.index = QLabel(self.info_frame)
         self.index.setObjectName(u"index")
-        self.index.setGeometry(QRect(290, 270, 191, 41))
+        self.index.setGeometry(QRect(280, 270, 201, 41))
         self.index.setFont(font3)
         self.index.setStyleSheet(u"QLabel{\n"
 "	color: rgb(255, 255, 255);\n"
@@ -501,7 +478,7 @@ class Ui_dashboard(object):
         self.frame_3.setFrameShadow(QFrame.Raised)
         self.label_notification = QLabel(self.frame_3)
         self.label_notification.setObjectName(u"label_notification")
-        self.label_notification.setGeometry(QRect(10, 400, 481, 131))
+        self.label_notification.setGeometry(QRect(10, 310, 481, 111))
         self.label_notification.setFont(font3)
         self.label_notification.setStyleSheet(u"QLabel{\n"
 "	color: rgb(255, 255, 255);\n"
@@ -510,30 +487,11 @@ class Ui_dashboard(object):
 "}")
         self.label_notification.setAlignment(Qt.AlignCenter)
         self.label_notification.setWordWrap(True)
-        self.camera_ip = QLineEdit(self.frame_3)
-        self.camera_ip.setObjectName(u"camera_ip")
-        self.camera_ip.setGeometry(QRect(20, 250, 461, 51))
-        font4 = QFont()
-        font4.setPointSize(10)
-        self.camera_ip.setFont(font4)
-        self.camera_ip.setStyleSheet(u"QLineEdit{\n"
-"	color: rgb(255, 255, 255);\n"
-"	border: 2px solid  rgb(45, 45, 45);\n"
-"	border-radius:15px;\n"
-"	padding-left: 50px;\n"
-"}\n"
-"\n"
-"QLineEdit:hover{\n"
-"	border:2px solid rgb(35, 35, 35);\n"
-"}\n"
-"\n"
-"QLineEdit:focus{\n"
-"	border:2px solid rgb(255, 255, 255);\n"
-"}")
-        self.camera_ip.setClearButtonEnabled(True)
         self.btn_connect_detect = QPushButton(self.frame_3)
         self.btn_connect_detect.setObjectName(u"btn_connect_detect")
-        self.btn_connect_detect.setGeometry(QRect(20, 320, 131, 41))
+        self.btn_connect_detect.setGeometry(QRect(200, 230, 131, 41))
+        font4 = QFont()
+        font4.setPointSize(10)
         self.btn_connect_detect.setFont(font4)
         self.btn_connect_detect.setStyleSheet(u"QPushButton{\n"
 "	color: rgb(255, 255, 255);\n"
@@ -549,18 +507,14 @@ class Ui_dashboard(object):
 "QPushButton:pressed{\n"
 "	border: 2px solid rgb(255,255,255);	\n"
 "}")
-        icon5 = QIcon()
-        icon5.addFile(u":/icons/asset/video.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_connect_detect.setIcon(icon5)
+        icon4 = QIcon()
+        icon4.addFile(u":/icons/asset/video.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_connect_detect.setIcon(icon4)
         self.btn_connect_detect.setIconSize(QSize(30, 30))
         self.btn_connect_detect.setFlat(True)
-        self.label_27 = QLabel(self.frame_3)
-        self.label_27.setObjectName(u"label_27")
-        self.label_27.setGeometry(QRect(30, 260, 41, 31))
-        self.label_27.setPixmap(QPixmap(u":/icons/asset/video.svg"))
         self.btn_disconnect = QPushButton(self.frame_3)
         self.btn_disconnect.setObjectName(u"btn_disconnect")
-        self.btn_disconnect.setGeometry(QRect(160, 320, 141, 41))
+        self.btn_disconnect.setGeometry(QRect(340, 230, 141, 41))
         self.btn_disconnect.setFont(font4)
         self.btn_disconnect.setStyleSheet(u"QPushButton{\n"
 "	color: rgb(255, 255, 255);\n"
@@ -576,14 +530,14 @@ class Ui_dashboard(object):
 "QPushButton:pressed{\n"
 "	border: 2px solid rgb(255,255,255);	\n"
 "}")
-        icon6 = QIcon()
-        icon6.addFile(u":/icons/asset/video-off.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_disconnect.setIcon(icon6)
+        icon5 = QIcon()
+        icon5.addFile(u":/icons/asset/video-off.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_disconnect.setIcon(icon5)
         self.btn_disconnect.setIconSize(QSize(30, 30))
         self.btn_disconnect.setFlat(True)
         self.comboBox = QComboBox(self.frame_3)
         self.comboBox.setObjectName(u"comboBox")
-        self.comboBox.setGeometry(QRect(310, 320, 171, 38))
+        self.comboBox.setGeometry(QRect(20, 230, 171, 38))
         self.comboBox.setMinimumSize(QSize(0, 38))
         self.comboBox.setMaximumSize(QSize(16777215, 38))
         self.comboBox.setFont(font4)
@@ -596,7 +550,7 @@ class Ui_dashboard(object):
         self.comboBox.setFrame(False)
         self.firstname_23 = QLabel(self.frame_3)
         self.firstname_23.setObjectName(u"firstname_23")
-        self.firstname_23.setGeometry(QRect(10, 210, 481, 171))
+        self.firstname_23.setGeometry(QRect(10, 190, 481, 101))
         font5 = QFont()
         font5.setFamily(u"Arial")
         font5.setPointSize(10)
@@ -613,7 +567,7 @@ class Ui_dashboard(object):
         self.firstname_23.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
         self.firstname_24 = QLabel(self.frame_3)
         self.firstname_24.setObjectName(u"firstname_24")
-        self.firstname_24.setGeometry(QRect(10, 110, 481, 81))
+        self.firstname_24.setGeometry(QRect(10, 100, 481, 81))
         self.firstname_24.setFont(font5)
         self.firstname_24.setStyleSheet(u"QLabel{\n"
 "	color: rgb(255, 255, 255);\n"
@@ -624,7 +578,7 @@ class Ui_dashboard(object):
         self.firstname_24.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignTop)
         self.btn_clear_label = QPushButton(self.frame_3)
         self.btn_clear_label.setObjectName(u"btn_clear_label")
-        self.btn_clear_label.setGeometry(QRect(260, 130, 221, 41))
+        self.btn_clear_label.setGeometry(QRect(260, 120, 221, 41))
         self.btn_clear_label.setFont(font4)
         self.btn_clear_label.setStyleSheet(u"QPushButton{\n"
 "	color: rgb(255, 255, 255);\n"
@@ -640,14 +594,14 @@ class Ui_dashboard(object):
 "QPushButton:pressed{\n"
 "	border: 2px solid rgb(255,255,255);	\n"
 "}")
-        icon7 = QIcon()
-        icon7.addFile(u":/icons/asset/delete.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_clear_label.setIcon(icon7)
+        icon6 = QIcon()
+        icon6.addFile(u":/icons/asset/delete.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_clear_label.setIcon(icon6)
         self.btn_clear_label.setIconSize(QSize(30, 30))
         self.btn_clear_label.setFlat(True)
         self.btn_open_database = QPushButton(self.frame_3)
         self.btn_open_database.setObjectName(u"btn_open_database")
-        self.btn_open_database.setGeometry(QRect(20, 130, 221, 41))
+        self.btn_open_database.setGeometry(QRect(20, 120, 221, 41))
         self.btn_open_database.setFont(font4)
         self.btn_open_database.setStyleSheet(u"QPushButton{\n"
 "	color: rgb(255, 255, 255);\n"
@@ -663,9 +617,9 @@ class Ui_dashboard(object):
 "QPushButton:pressed{\n"
 "	border: 2px solid rgb(255,255,255);	\n"
 "}")
-        icon8 = QIcon()
-        icon8.addFile(u":/icons/asset/database.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_open_database.setIcon(icon8)
+        icon7 = QIcon()
+        icon7.addFile(u":/icons/asset/database.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_open_database.setIcon(icon7)
         self.btn_open_database.setIconSize(QSize(30, 30))
         self.btn_open_database.setFlat(True)
         self.firstname_25 = QLabel(self.frame_3)
@@ -710,16 +664,14 @@ class Ui_dashboard(object):
 "QPushButton:pressed{\n"
 "	border: 2px solid rgb(255,255,255);	\n"
 "}")
-        icon9 = QIcon()
-        icon9.addFile(u":/icons/asset/refresh-cw.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_refresh.setIcon(icon9)
+        icon8 = QIcon()
+        icon8.addFile(u":/icons/asset/refresh-cw.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_refresh.setIcon(icon8)
         self.btn_refresh.setIconSize(QSize(30, 30))
         self.btn_refresh.setFlat(True)
         self.firstname_23.raise_()
         self.label_notification.raise_()
-        self.camera_ip.raise_()
         self.btn_connect_detect.raise_()
-        self.label_27.raise_()
         self.btn_disconnect.raise_()
         self.comboBox.raise_()
         self.firstname_24.raise_()
@@ -736,7 +688,7 @@ class Ui_dashboard(object):
 
         self.right_frame = QFrame(self.home)
         self.right_frame.setObjectName(u"right_frame")
-        self.right_frame.setMinimumSize(QSize(0, 700))
+        self.right_frame.setMinimumSize(QSize(0, 500))
         self.right_frame.setFrameShape(QFrame.NoFrame)
         self.right_frame.setFrameShadow(QFrame.Raised)
         self.verticalLayout_7 = QVBoxLayout(self.right_frame)
@@ -745,16 +697,16 @@ class Ui_dashboard(object):
         self.verticalLayout_7.setContentsMargins(0, 0, 0, 0)
         self.camera_frame = QFrame(self.right_frame)
         self.camera_frame.setObjectName(u"camera_frame")
-        self.camera_frame.setMinimumSize(QSize(0, 700))
-        self.camera_frame.setMaximumSize(QSize(16777215, 700))
+        self.camera_frame.setMinimumSize(QSize(0, 570))
+        self.camera_frame.setMaximumSize(QSize(16777215, 570))
         self.camera_frame.setFrameShape(QFrame.NoFrame)
         self.camera_frame.setFrameShadow(QFrame.Raised)
         self.verticalLayout_8 = QVBoxLayout(self.camera_frame)
         self.verticalLayout_8.setObjectName(u"verticalLayout_8")
         self.camera_view = QLabel(self.camera_frame)
         self.camera_view.setObjectName(u"camera_view")
-        self.camera_view.setMinimumSize(QSize(0, 680))
-        self.camera_view.setMaximumSize(QSize(16777215, 680))
+        self.camera_view.setMinimumSize(QSize(0, 0))
+        self.camera_view.setMaximumSize(QSize(16777215, 16777215))
         self.camera_view.setFont(font2)
         self.camera_view.setStyleSheet(u"QLabel{\n"
 "	color: rgb(255, 255, 255);\n"
@@ -772,6 +724,7 @@ class Ui_dashboard(object):
 
         self.properties_frame = QFrame(self.right_frame)
         self.properties_frame.setObjectName(u"properties_frame")
+        self.properties_frame.setMaximumSize(QSize(16777215, 400))
         self.properties_frame.setFrameShape(QFrame.NoFrame)
         self.properties_frame.setFrameShadow(QFrame.Raised)
         self.verticalLayout_11 = QVBoxLayout(self.properties_frame)
@@ -780,24 +733,29 @@ class Ui_dashboard(object):
         self.verticalLayout_11.setContentsMargins(0, 0, 0, 0)
         self.frame_2 = QFrame(self.properties_frame)
         self.frame_2.setObjectName(u"frame_2")
+        self.frame_2.setMinimumSize(QSize(0, 230))
+        self.frame_2.setMaximumSize(QSize(16777215, 230))
         self.frame_2.setFrameShape(QFrame.NoFrame)
         self.frame_2.setFrameShadow(QFrame.Raised)
         self.horizontalLayout_10 = QHBoxLayout(self.frame_2)
+        self.horizontalLayout_10.setSpacing(0)
         self.horizontalLayout_10.setObjectName(u"horizontalLayout_10")
+        self.horizontalLayout_10.setContentsMargins(0, 0, 0, 0)
         self.frame_4 = QFrame(self.frame_2)
         self.frame_4.setObjectName(u"frame_4")
         self.frame_4.setMinimumSize(QSize(0, 0))
-        self.frame_4.setMaximumSize(QSize(450, 16777215))
+        self.frame_4.setMaximumSize(QSize(370, 16777215))
         self.frame_4.setStyleSheet(u"QFrame{\n"
 "	color: rgb(255, 255, 255);\n"
 "	background-color: rgb(35, 35, 35);\n"
 "	border-radius: 10px;\n"
 "}")
         self.frame_4.setFrameShape(QFrame.NoFrame)
-        self.frame_4.setFrameShadow(QFrame.Raised)
+        self.frame_4.setFrameShadow(QFrame.Plain)
         self.gridLayout_2 = QGridLayout(self.frame_4)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
-        self.gridLayout_2.setVerticalSpacing(20)
+        self.gridLayout_2.setVerticalSpacing(15)
+        self.gridLayout_2.setContentsMargins(15, -1, -1, -1)
         self.label_14 = QLabel(self.frame_4)
         self.label_14.setObjectName(u"label_14")
         self.label_14.setMinimumSize(QSize(0, 20))
@@ -926,6 +884,8 @@ class Ui_dashboard(object):
 
         self.frame_5 = QFrame(self.frame_2)
         self.frame_5.setObjectName(u"frame_5")
+        self.frame_5.setMinimumSize(QSize(350, 0))
+        self.frame_5.setMaximumSize(QSize(360, 16777215))
         self.frame_5.setStyleSheet(u"QFrame{\n"
 "	color: rgb(255, 255, 255);\n"
 "	background-color: rgb(35, 35, 35);\n"
@@ -935,7 +895,7 @@ class Ui_dashboard(object):
         self.frame_5.setFrameShadow(QFrame.Plain)
         self.label_18 = QLabel(self.frame_5)
         self.label_18.setObjectName(u"label_18")
-        self.label_18.setGeometry(QRect(170, 20, 150, 20))
+        self.label_18.setGeometry(QRect(100, 20, 150, 20))
         self.label_18.setMinimumSize(QSize(0, 20))
         self.label_18.setMaximumSize(QSize(16777215, 20))
         self.label_18.setFont(font6)
@@ -943,7 +903,7 @@ class Ui_dashboard(object):
         self.label_18.setAlignment(Qt.AlignCenter)
         self.scan_range_label = QLabel(self.frame_5)
         self.scan_range_label.setObjectName(u"scan_range_label")
-        self.scan_range_label.setGeometry(QRect(20, 160, 431, 51))
+        self.scan_range_label.setGeometry(QRect(20, 150, 321, 51))
         self.scan_range_label.setFont(font3)
         self.scan_range_label.setStyleSheet(u"QLabel{\n"
 "	color: rgb(255, 255, 255);\n"
@@ -955,12 +915,12 @@ class Ui_dashboard(object):
         self.scan_range_label.setAlignment(Qt.AlignCenter)
         self.label_42 = QLabel(self.frame_5)
         self.label_42.setObjectName(u"label_42")
-        self.label_42.setGeometry(QRect(30, 170, 31, 31))
+        self.label_42.setGeometry(QRect(30, 160, 31, 31))
         self.label_42.setStyleSheet(u"background-color: rgb(45, 45, 45);")
         self.label_42.setPixmap(QPixmap(u":/icons/asset/camera.svg"))
         self.btn_scan_range = QPushButton(self.frame_5)
         self.btn_scan_range.setObjectName(u"btn_scan_range")
-        self.btn_scan_range.setGeometry(QRect(300, 80, 151, 51))
+        self.btn_scan_range.setGeometry(QRect(230, 70, 111, 51))
         self.btn_scan_range.setFont(font4)
         self.btn_scan_range.setStyleSheet(u"QPushButton{\n"
 "	color: rgb(255, 255, 255);\n"
@@ -981,7 +941,7 @@ class Ui_dashboard(object):
         self.btn_scan_range.setFlat(True)
         self.scan_range = QLineEdit(self.frame_5)
         self.scan_range.setObjectName(u"scan_range")
-        self.scan_range.setGeometry(QRect(20, 80, 271, 51))
+        self.scan_range.setGeometry(QRect(20, 70, 201, 51))
         self.scan_range.setFont(font4)
         self.scan_range.setStyleSheet(u"QLineEdit{\n"
 "	color: rgb(255, 255, 255);\n"
@@ -1021,9 +981,61 @@ class Ui_dashboard(object):
         self.frame_10.setMaximumSize(QSize(16777215, 90))
         self.frame_10.setFrameShape(QFrame.StyledPanel)
         self.frame_10.setFrameShadow(QFrame.Raised)
+        self.label_31 = QLabel(self.frame_10)
+        self.label_31.setObjectName(u"label_31")
+        self.label_31.setGeometry(QRect(0, 0, 1241, 81))
+        font7 = QFont()
+        font7.setFamily(u"Arial")
+        font7.setPointSize(11)
+        font7.setBold(True)
+        font7.setWeight(75)
+        self.label_31.setFont(font7)
+        self.label_31.setStyleSheet(u"QLabel{\n"
+"	color: rgb(255, 255, 255);\n"
+"	background-color: rgb(35, 35, 35);\n"
+"	border-radius: 10px;\n"
+"	padding-left:10px;\n"
+"}")
+        self.label_31.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+        self.btn_active_load_data = QPushButton(self.frame_10)
+        self.btn_active_load_data.setObjectName(u"btn_active_load_data")
+        self.btn_active_load_data.setGeometry(QRect(310, 20, 141, 41))
+        self.btn_active_load_data.setFont(font4)
+        self.btn_active_load_data.setStyleSheet(u"QPushButton{\n"
+"	color: rgb(255, 255, 255);\n"
+"	background-color: rgb(45, 45, 45);\n"
+"	border:none;\n"
+"	border-radius: 10px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"	border-radius: 20px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"	border: 2px solid rgb(255,255,255);	\n"
+"}")
+        icon9 = QIcon()
+        icon9.addFile(u":/icons/asset/download.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_active_load_data.setIcon(icon9)
+        self.btn_active_load_data.setIconSize(QSize(30, 30))
+        self.btn_active_load_data.setFlat(True)
+        self.database_tables_active = QComboBox(self.frame_10)
+        self.database_tables_active.setObjectName(u"database_tables_active")
+        self.database_tables_active.setGeometry(QRect(20, 20, 281, 41))
+        self.database_tables_active.setMinimumSize(QSize(0, 41))
+        self.database_tables_active.setMaximumSize(QSize(16777215, 38))
+        self.database_tables_active.setFont(font4)
+        self.database_tables_active.setStyleSheet(u"QComboBox{\n"
+"	color: rgb(255, 255, 255);\n"
+"	border: 2px solid rgb(45, 45, 45);\n"
+"	padding-left:10px;\n"
+"	border-radius: 5px;\n"
+"}")
+        self.database_tables_active.setFrame(False)
         self.active_count_filepath = QLineEdit(self.frame_10)
         self.active_count_filepath.setObjectName(u"active_count_filepath")
-        self.active_count_filepath.setGeometry(QRect(20, 20, 611, 41))
+        self.active_count_filepath.setGeometry(QRect(650, 20, 421, 41))
         self.active_count_filepath.setFont(font4)
         self.active_count_filepath.setStyleSheet(u"QLineEdit{\n"
 "	color: rgb(255, 255, 255);\n"
@@ -1042,7 +1054,7 @@ class Ui_dashboard(object):
         self.active_count_filepath.setClearButtonEnabled(True)
         self.btn_active_count_save = QPushButton(self.frame_10)
         self.btn_active_count_save.setObjectName(u"btn_active_count_save")
-        self.btn_active_count_save.setGeometry(QRect(650, 20, 181, 41))
+        self.btn_active_count_save.setGeometry(QRect(1080, 20, 141, 41))
         self.btn_active_count_save.setFont(font4)
         self.btn_active_count_save.setStyleSheet(u"QPushButton{\n"
 "	color: rgb(255, 255, 255);\n"
@@ -1063,27 +1075,11 @@ class Ui_dashboard(object):
         self.btn_active_count_save.setIcon(icon10)
         self.btn_active_count_save.setIconSize(QSize(30, 30))
         self.btn_active_count_save.setFlat(True)
-        self.label_31 = QLabel(self.frame_10)
-        self.label_31.setObjectName(u"label_31")
-        self.label_31.setGeometry(QRect(0, 0, 1431, 81))
-        font7 = QFont()
-        font7.setFamily(u"Arial")
-        font7.setPointSize(11)
-        font7.setBold(True)
-        font7.setWeight(75)
-        self.label_31.setFont(font7)
-        self.label_31.setStyleSheet(u"QLabel{\n"
-"	color: rgb(255, 255, 255);\n"
-"	background-color: rgb(35, 35, 35);\n"
-"	border-radius: 10px;\n"
-"	padding-left:10px;\n"
-"}")
-        self.label_31.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
-        self.btn_active_load_data = QPushButton(self.frame_10)
-        self.btn_active_load_data.setObjectName(u"btn_active_load_data")
-        self.btn_active_load_data.setGeometry(QRect(1230, 20, 181, 41))
-        self.btn_active_load_data.setFont(font4)
-        self.btn_active_load_data.setStyleSheet(u"QPushButton{\n"
+        self.btn_load_refresh = QPushButton(self.frame_10)
+        self.btn_load_refresh.setObjectName(u"btn_load_refresh")
+        self.btn_load_refresh.setGeometry(QRect(470, 20, 141, 41))
+        self.btn_load_refresh.setFont(font4)
+        self.btn_load_refresh.setStyleSheet(u"QPushButton{\n"
 "	color: rgb(255, 255, 255);\n"
 "	background-color: rgb(45, 45, 45);\n"
 "	border:none;\n"
@@ -1097,29 +1093,9 @@ class Ui_dashboard(object):
 "QPushButton:pressed{\n"
 "	border: 2px solid rgb(255,255,255);	\n"
 "}")
-        icon11 = QIcon()
-        icon11.addFile(u":/icons/asset/download.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_active_load_data.setIcon(icon11)
-        self.btn_active_load_data.setIconSize(QSize(30, 30))
-        self.btn_active_load_data.setFlat(True)
-        self.database_tables_active = QComboBox(self.frame_10)
-        self.database_tables_active.setObjectName(u"database_tables_active")
-        self.database_tables_active.setGeometry(QRect(850, 20, 361, 41))
-        self.database_tables_active.setMinimumSize(QSize(0, 41))
-        self.database_tables_active.setMaximumSize(QSize(16777215, 38))
-        self.database_tables_active.setFont(font4)
-        self.database_tables_active.setStyleSheet(u"QComboBox{\n"
-"	color: rgb(255, 255, 255);\n"
-"	border: 2px solid rgb(45, 45, 45);\n"
-"	padding-left:10px;\n"
-"	border-radius: 5px;\n"
-"}")
-        self.database_tables_active.setFrame(False)
-        self.label_31.raise_()
-        self.active_count_filepath.raise_()
-        self.btn_active_count_save.raise_()
-        self.btn_active_load_data.raise_()
-        self.database_tables_active.raise_()
+        self.btn_load_refresh.setIcon(icon8)
+        self.btn_load_refresh.setIconSize(QSize(30, 30))
+        self.btn_load_refresh.setFlat(True)
 
         self.verticalLayout_10.addWidget(self.frame_10)
 
@@ -1158,7 +1134,7 @@ class Ui_dashboard(object):
         self.tableWidget_count.setEditTriggers(QAbstractItemView.NoEditTriggers)
         self.tableWidget_count.setSortingEnabled(True)
         self.tableWidget_count.horizontalHeader().setCascadingSectionResizes(True)
-        self.tableWidget_count.horizontalHeader().setDefaultSectionSize(280)
+        self.tableWidget_count.horizontalHeader().setDefaultSectionSize(230)
         self.tableWidget_count.horizontalHeader().setProperty("showSortIndicator", True)
         self.tableWidget_count.horizontalHeader().setStretchLastSection(True)
 
@@ -1170,107 +1146,17 @@ class Ui_dashboard(object):
         self.stackedWidget.addWidget(self.active)
         self.search = QWidget()
         self.search.setObjectName(u"search")
-        self.horizontalLayout_5 = QHBoxLayout(self.search)
-        self.horizontalLayout_5.setSpacing(0)
-        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
-        self.horizontalLayout_5.setContentsMargins(0, 0, 0, 0)
-        self.left_frame_2 = QFrame(self.search)
-        self.left_frame_2.setObjectName(u"left_frame_2")
-        self.left_frame_2.setMinimumSize(QSize(500, 0))
-        self.left_frame_2.setMaximumSize(QSize(500, 16777215))
-        self.left_frame_2.setFrameShape(QFrame.NoFrame)
-        self.left_frame_2.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_9 = QVBoxLayout(self.left_frame_2)
-        self.verticalLayout_9.setSpacing(0)
+        self.verticalLayout_9 = QVBoxLayout(self.search)
         self.verticalLayout_9.setObjectName(u"verticalLayout_9")
-        self.verticalLayout_9.setContentsMargins(0, 0, 0, 0)
-        self.top = QFrame(self.left_frame_2)
-        self.top.setObjectName(u"top")
-        self.top.setMinimumSize(QSize(0, 500))
-        self.top.setMaximumSize(QSize(500, 500))
-        self.top.setFrameShape(QFrame.NoFrame)
-        self.top.setFrameShadow(QFrame.Raised)
-        self.db_refrence = QLabel(self.top)
-        self.db_refrence.setObjectName(u"db_refrence")
-        self.db_refrence.setGeometry(QRect(290, 310, 191, 41))
-        self.db_refrence.setFont(font3)
-        self.db_refrence.setStyleSheet(u"QLabel{\n"
-"	color: rgb(255, 255, 255);\n"
-"	background-color: rgb(45, 45, 45);\n"
-"	border-radius: 10px;\n"
-"	padding-left:10px;\n"
-"}")
-        self.db_refrence.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
-        self.db_image_data = QLabel(self.top)
-        self.db_image_data.setObjectName(u"db_image_data")
-        self.db_image_data.setGeometry(QRect(20, 130, 261, 281))
-        self.db_image_data.setFont(font2)
-        self.db_image_data.setStyleSheet(u"QLabel{\n"
-"	color: rgb(255, 255, 255);\n"
-"	background-color: rgb(45, 45, 45);\n"
-"	border-radius: 10px;\n"
-"}")
-        self.db_image_data.setPixmap(QPixmap(u":/icons/asset/image.svg"))
-        self.db_image_data.setAlignment(Qt.AlignCenter)
-        self.db_lastname = QLabel(self.top)
-        self.db_lastname.setObjectName(u"db_lastname")
-        self.db_lastname.setGeometry(QRect(290, 250, 191, 41))
-        self.db_lastname.setFont(font3)
-        self.db_lastname.setStyleSheet(u"QLabel{\n"
-"	color: rgb(255, 255, 255);\n"
-"	background-color: rgb(45, 45, 45);\n"
-"	border-radius: 10px;\n"
-"	padding-left:10px;\n"
-"}")
-        self.db_lastname.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
-        self.db_middlename = QLabel(self.top)
-        self.db_middlename.setObjectName(u"db_middlename")
-        self.db_middlename.setGeometry(QRect(290, 190, 191, 41))
-        self.db_middlename.setFont(font3)
-        self.db_middlename.setStyleSheet(u"QLabel{\n"
-"	color: rgb(255, 255, 255);\n"
-"	background-color: rgb(45, 45, 45);\n"
-"	border-radius: 10px;\n"
-"	padding-left:10px;\n"
-"}")
-        self.db_middlename.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
-        self.db_firstname = QLabel(self.top)
-        self.db_firstname.setObjectName(u"db_firstname")
-        self.db_firstname.setGeometry(QRect(290, 130, 191, 41))
-        self.db_firstname.setFont(font3)
-        self.db_firstname.setStyleSheet(u"QLabel{\n"
-"	color: rgb(255, 255, 255);\n"
-"	background-color: rgb(45, 45, 45);\n"
-"	border-radius: 10px;\n"
-"	padding-left:10px;\n"
-"}")
-        self.db_firstname.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
-        self.db_index = QLabel(self.top)
-        self.db_index.setObjectName(u"db_index")
-        self.db_index.setGeometry(QRect(290, 370, 191, 41))
-        self.db_index.setFont(font3)
-        self.db_index.setStyleSheet(u"QLabel{\n"
-"	color: rgb(255, 255, 255);\n"
-"	background-color: rgb(45, 45, 45);\n"
-"	border-radius: 10px;\n"
-"	padding-left:10px;\n"
-"}")
-        self.db_index.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
-        self.db_programe = QLabel(self.top)
-        self.db_programe.setObjectName(u"db_programe")
-        self.db_programe.setGeometry(QRect(20, 430, 461, 41))
-        self.db_programe.setFont(font3)
-        self.db_programe.setStyleSheet(u"QLabel{\n"
-"	color: rgb(255, 255, 255);\n"
-"	background-color: rgb(45, 45, 45);\n"
-"	border-radius: 10px;\n"
-"	padding-left:10px;\n"
-"}")
-        self.db_programe.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
-        self.db_programe.setWordWrap(True)
-        self.search_box = QLineEdit(self.top)
+        self.frame_6 = QFrame(self.search)
+        self.frame_6.setObjectName(u"frame_6")
+        self.frame_6.setMinimumSize(QSize(0, 90))
+        self.frame_6.setMaximumSize(QSize(16777215, 100))
+        self.frame_6.setFrameShape(QFrame.NoFrame)
+        self.frame_6.setFrameShadow(QFrame.Raised)
+        self.search_box = QLineEdit(self.frame_6)
         self.search_box.setObjectName(u"search_box")
-        self.search_box.setGeometry(QRect(20, 30, 321, 41))
+        self.search_box.setGeometry(QRect(10, 20, 181, 41))
         self.search_box.setFont(font4)
         self.search_box.setStyleSheet(u"QLineEdit{\n"
 "	color: rgb(255, 255, 255);\n"
@@ -1287,9 +1173,20 @@ class Ui_dashboard(object):
 "	border:2px solid rgb(255, 255, 255);\n"
 "}")
         self.search_box.setClearButtonEnabled(True)
-        self.btn_search_page = QPushButton(self.top)
+        self.label_29 = QLabel(self.frame_6)
+        self.label_29.setObjectName(u"label_29")
+        self.label_29.setGeometry(QRect(0, 0, 361, 81))
+        self.label_29.setFont(font7)
+        self.label_29.setStyleSheet(u"QLabel{\n"
+"	color: rgb(255, 255, 255);\n"
+"	background-color: rgb(35, 35, 35);\n"
+"	border-radius: 10px;\n"
+"	padding-left:10px;\n"
+"}")
+        self.label_29.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+        self.btn_search_page = QPushButton(self.frame_6)
         self.btn_search_page.setObjectName(u"btn_search_page")
-        self.btn_search_page.setGeometry(QRect(350, 30, 131, 41))
+        self.btn_search_page.setGeometry(QRect(210, 20, 131, 41))
         self.btn_search_page.setFont(font4)
         self.btn_search_page.setStyleSheet(u"QPushButton{\n"
 "	color: rgb(255, 255, 255);\n"
@@ -1299,7 +1196,7 @@ class Ui_dashboard(object):
 "}\n"
 "\n"
 "QPushButton:hover{\n"
-"	border-radius: 20px;\n"
+"	border-radius: 15px;\n"
 "}\n"
 "\n"
 "QPushButton:pressed{\n"
@@ -1308,94 +1205,9 @@ class Ui_dashboard(object):
         self.btn_search_page.setIcon(icon1)
         self.btn_search_page.setIconSize(QSize(30, 30))
         self.btn_search_page.setFlat(True)
-        self.label_29 = QLabel(self.top)
-        self.label_29.setObjectName(u"label_29")
-        self.label_29.setGeometry(QRect(10, 10, 481, 81))
-        self.label_29.setFont(font7)
-        self.label_29.setStyleSheet(u"QLabel{\n"
-"	color: rgb(255, 255, 255);\n"
-"	background-color: rgb(35, 35, 35);\n"
-"	border-radius: 10px;\n"
-"	padding-left:10px;\n"
-"}")
-        self.label_29.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
-        self.image_3 = QLabel(self.top)
-        self.image_3.setObjectName(u"image_3")
-        self.image_3.setGeometry(QRect(10, 110, 481, 381))
-        self.image_3.setFont(font2)
-        self.image_3.setStyleSheet(u"QLabel{\n"
-"	color: rgb(255, 255, 255);\n"
-"	background-color: rgb(35, 35, 35);\n"
-"	border-radius: 10px;\n"
-"}")
-        self.image_3.setAlignment(Qt.AlignCenter)
-        self.image_3.raise_()
-        self.label_29.raise_()
-        self.db_refrence.raise_()
-        self.db_image_data.raise_()
-        self.db_lastname.raise_()
-        self.db_middlename.raise_()
-        self.db_firstname.raise_()
-        self.db_index.raise_()
-        self.db_programe.raise_()
-        self.search_box.raise_()
-        self.btn_search_page.raise_()
-
-        self.verticalLayout_9.addWidget(self.top)
-
-        self.bottom = QFrame(self.left_frame_2)
-        self.bottom.setObjectName(u"bottom")
-        self.bottom.setMinimumSize(QSize(0, 450))
-        self.bottom.setMaximumSize(QSize(16777215, 450))
-        self.bottom.setFrameShape(QFrame.NoFrame)
-        self.frame_6 = QFrame(self.bottom)
-        self.frame_6.setObjectName(u"frame_6")
-        self.frame_6.setGeometry(QRect(20, 190, 461, 240))
-        self.frame_6.setMinimumSize(QSize(0, 240))
-        self.frame_6.setMaximumSize(QSize(16777215, 240))
-        self.frame_6.setStyleSheet(u"QFrame{\n"
-"	background-color: rgb(255, 255, 255);\n"
-"	border-radius: 10px;\n"
-"}")
-        self.frame_6.setFrameShape(QFrame.NoFrame)
-        self.frame_6.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_12 = QVBoxLayout(self.frame_6)
-        self.verticalLayout_12.setObjectName(u"verticalLayout_12")
-        self.calendarWidget = QCalendarWidget(self.frame_6)
-        self.calendarWidget.setObjectName(u"calendarWidget")
-        self.calendarWidget.setVerticalHeaderFormat(QCalendarWidget.NoVerticalHeader)
-        self.calendarWidget.setNavigationBarVisible(True)
-
-        self.verticalLayout_12.addWidget(self.calendarWidget)
-
-        self.db_start_date = QLineEdit(self.bottom)
-        self.db_start_date.setObjectName(u"db_start_date")
-        self.db_start_date.setGeometry(QRect(20, 130, 171, 51))
-        self.db_start_date.setFont(font4)
-        self.db_start_date.setStyleSheet(u"QLineEdit{\n"
-"	color: rgb(255, 255, 255);\n"
-"	border: 2px solid  rgb(35, 35, 35);\n"
-"	border-radius:15px;\n"
-"	padding-left: 45px;\n"
-"}\n"
-"\n"
-"QLineEdit:hover{\n"
-"	border: 2px solid  rgb(45, 45, 45);\n"
-"}\n"
-"\n"
-"QLineEdit:focus{\n"
-"	border:2px solid rgb(255, 255, 255);\n"
-"}")
-        self.db_start_date.setInputMethodHints(Qt.ImhPreferNumbers)
-        self.db_start_date.setClearButtonEnabled(True)
-        self.label_25 = QLabel(self.bottom)
-        self.label_25.setObjectName(u"label_25")
-        self.label_25.setGeometry(QRect(30, 140, 31, 31))
-        self.label_25.setPixmap(QPixmap(u":/icons/asset/calendar.svg"))
-        self.label_30 = QLabel(self.bottom)
+        self.label_30 = QLabel(self.frame_6)
         self.label_30.setObjectName(u"label_30")
-        self.label_30.setGeometry(QRect(10, 110, 481, 331))
-        self.label_30.setMinimumSize(QSize(0, 300))
+        self.label_30.setGeometry(QRect(750, 0, 491, 81))
         self.label_30.setFont(font7)
         self.label_30.setStyleSheet(u"QLabel{\n"
 "	color: rgb(255, 255, 255);\n"
@@ -1404,43 +1216,11 @@ class Ui_dashboard(object):
 "	padding-left:10px;\n"
 "}")
         self.label_30.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
-        self.btn_csv = QPushButton(self.bottom)
-        self.btn_csv.setObjectName(u"btn_csv")
-        self.btn_csv.setGeometry(QRect(20, 30, 201, 41))
-        self.btn_csv.setFont(font4)
-        self.btn_csv.setStyleSheet(u"QPushButton{\n"
-"	color: rgb(255, 255, 255);\n"
-"	background-color: rgb(45, 45, 45);\n"
-"	border:none;\n"
-"	border-radius: 10px;\n"
-"}\n"
-"\n"
-"QPushButton:hover{\n"
-"	border-radius: 20px;\n"
-"}\n"
-"\n"
-"QPushButton:pressed{\n"
-"	border: 2px solid rgb(255,255,255);	\n"
-"}")
-        icon12 = QIcon()
-        icon12.addFile(u":/icons/asset/file.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_csv.setIcon(icon12)
-        self.btn_csv.setIconSize(QSize(30, 30))
-        self.btn_csv.setFlat(True)
-        self.label_40 = QLabel(self.bottom)
-        self.label_40.setObjectName(u"label_40")
-        self.label_40.setGeometry(QRect(10, 10, 481, 81))
-        self.label_40.setFont(font7)
-        self.label_40.setStyleSheet(u"QLabel{\n"
-"	color: rgb(255, 255, 255);\n"
-"	background-color: rgb(35, 35, 35);\n"
-"	border-radius: 10px;\n"
-"	padding-left:10px;\n"
-"}")
-        self.label_40.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
-        self.filename = QLineEdit(self.bottom)
+        self.filename = QLineEdit(self.frame_6)
         self.filename.setObjectName(u"filename")
-        self.filename.setGeometry(QRect(200, 130, 281, 51))
+        self.filename.setGeometry(QRect(760, 20, 201, 45))
+        self.filename.setMinimumSize(QSize(0, 45))
+        self.filename.setMaximumSize(QSize(16777215, 45))
         self.filename.setFont(font4)
         self.filename.setStyleSheet(u"QLineEdit{\n"
 "	color: rgb(255, 255, 255);\n"
@@ -1458,9 +1238,34 @@ class Ui_dashboard(object):
 "}")
         self.filename.setInputMethodHints(Qt.ImhPreferNumbers)
         self.filename.setClearButtonEnabled(True)
-        self.btn_backup = QPushButton(self.bottom)
+        self.btn_csv = QPushButton(self.frame_6)
+        self.btn_csv.setObjectName(u"btn_csv")
+        self.btn_csv.setGeometry(QRect(970, 20, 121, 42))
+        self.btn_csv.setMinimumSize(QSize(0, 42))
+        self.btn_csv.setMaximumSize(QSize(16777215, 42))
+        self.btn_csv.setFont(font4)
+        self.btn_csv.setStyleSheet(u"QPushButton{\n"
+"	color: rgb(255, 255, 255);\n"
+"	background-color: rgb(45, 45, 45);\n"
+"	border:none;\n"
+"	border-radius: 10px;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"	border-radius: 15px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"	border: 2px solid rgb(255,255,255);	\n"
+"}")
+        icon11 = QIcon()
+        icon11.addFile(u":/icons/asset/file.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_csv.setIcon(icon11)
+        self.btn_csv.setIconSize(QSize(30, 30))
+        self.btn_csv.setFlat(True)
+        self.btn_backup = QPushButton(self.frame_6)
         self.btn_backup.setObjectName(u"btn_backup")
-        self.btn_backup.setGeometry(QRect(280, 30, 201, 41))
+        self.btn_backup.setGeometry(QRect(1110, 20, 121, 41))
         self.btn_backup.setFont(font4)
         self.btn_backup.setStyleSheet(u"QPushButton{\n"
 "	color: rgb(255, 255, 255);\n"
@@ -1476,32 +1281,93 @@ class Ui_dashboard(object):
 "QPushButton:pressed{\n"
 "	border: 2px solid rgb(255,255,255);	\n"
 "}")
-        self.btn_backup.setIcon(icon8)
+        self.btn_backup.setIcon(icon7)
         self.btn_backup.setIconSize(QSize(30, 30))
         self.btn_backup.setFlat(True)
-        self.label_40.raise_()
+        self.label_32 = QLabel(self.frame_6)
+        self.label_32.setObjectName(u"label_32")
+        self.label_32.setGeometry(QRect(370, 0, 371, 81))
+        self.label_32.setFont(font7)
+        self.label_32.setStyleSheet(u"QLabel{\n"
+"	color: rgb(255, 255, 255);\n"
+"	background-color: rgb(35, 35, 35);\n"
+"	border-radius: 10px;\n"
+"	padding-left:10px;\n"
+"}")
+        self.label_32.setAlignment(Qt.AlignLeading|Qt.AlignLeft|Qt.AlignVCenter)
+        self.report_date = QDateEdit(self.frame_6)
+        self.report_date.setObjectName(u"report_date")
+        self.report_date.setGeometry(QRect(410, 20, 141, 40))
+        self.report_date.setMinimumSize(QSize(0, 40))
+        self.report_date.setMaximumSize(QSize(16777215, 40))
+        font8 = QFont()
+        font8.setPointSize(12)
+        font8.setBold(False)
+        font8.setWeight(50)
+        self.report_date.setFont(font8)
+        self.report_date.setStyleSheet(u"QDateEdit{\n"
+"	color: rgb(255, 255, 255);\n"
+"background-color: rgb(45, 45, 45);\n"
+"border: 2px solid rgb(45, 45, 45);\n"
+"padding-left:10px;\n"
+"border-radius: 10px;\n"
+"}\n"
+"\n"
+"")
+        self.report_date.setFrame(False)
+        self.report_date.setReadOnly(False)
+        self.report_date.setButtonSymbols(QAbstractSpinBox.UpDownArrows)
+        self.report_date.setAccelerated(True)
+        self.report_date.setCorrectionMode(QAbstractSpinBox.CorrectToNearestValue)
+        self.report_date.setProperty("showGroupSeparator", False)
+        self.report_date.setDateTime(QDateTime(QDate(2023, 1, 1), QTime(0, 0, 0)))
+        self.report_date.setMinimumDate(QDate(2023, 1, 1))
+        self.report_date.setCalendarPopup(True)
+        self.report_date.setTimeSpec(Qt.LocalTime)
+        self.report_date.setDate(QDate(2023, 1, 1))
+        self.database_tables_search = QComboBox(self.frame_6)
+        self.database_tables_search.setObjectName(u"database_tables_search")
+        self.database_tables_search.setGeometry(QRect(560, 20, 171, 40))
+        self.database_tables_search.setMinimumSize(QSize(0, 40))
+        self.database_tables_search.setMaximumSize(QSize(16777215, 38))
+        self.database_tables_search.setFont(font4)
+        self.database_tables_search.setStyleSheet(u"QComboBox{\n"
+"	color: rgb(255, 255, 255);\n"
+"	border: 2px solid rgb(45, 45, 45);\n"
+"	padding-left:10px;\n"
+"	border-radius: 5px;\n"
+"}")
+        self.database_tables_search.setFrame(False)
+        self.search_by_date = QRadioButton(self.frame_6)
+        self.search_by_date.setObjectName(u"search_by_date")
+        self.search_by_date.setGeometry(QRect(380, 30, 21, 23))
+        self.search_by_date.setFont(font6)
+        self.search_by_date.setStyleSheet(u"QRadioButton{\n"
+"	background-color: rgb(35, 35, 35);\n"
+"	color: rgb(255, 255, 255);\n"
+"}")
+        self.label_29.raise_()
+        self.search_box.raise_()
+        self.btn_search_page.raise_()
         self.label_30.raise_()
-        self.frame_6.raise_()
-        self.db_start_date.raise_()
-        self.label_25.raise_()
-        self.btn_csv.raise_()
         self.filename.raise_()
+        self.btn_csv.raise_()
         self.btn_backup.raise_()
+        self.label_32.raise_()
+        self.report_date.raise_()
+        self.database_tables_search.raise_()
+        self.search_by_date.raise_()
 
-        self.verticalLayout_9.addWidget(self.bottom)
+        self.verticalLayout_9.addWidget(self.frame_6)
 
-
-        self.horizontalLayout_5.addWidget(self.left_frame_2)
-
-        self.rigth_frame = QFrame(self.search)
-        self.rigth_frame.setObjectName(u"rigth_frame")
-        self.rigth_frame.setStyleSheet(u"")
-        self.rigth_frame.setFrameShape(QFrame.NoFrame)
-        self.rigth_frame.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_9 = QHBoxLayout(self.rigth_frame)
-        self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
-        self.horizontalLayout_9.setContentsMargins(5, -1, 9, 12)
-        self.tableWidget = QTableWidget(self.rigth_frame)
+        self.frame_13 = QFrame(self.search)
+        self.frame_13.setObjectName(u"frame_13")
+        self.frame_13.setFrameShape(QFrame.StyledPanel)
+        self.frame_13.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_12 = QVBoxLayout(self.frame_13)
+        self.verticalLayout_12.setObjectName(u"verticalLayout_12")
+        self.verticalLayout_12.setContentsMargins(0, -1, 0, -1)
+        self.tableWidget = QTableWidget(self.frame_13)
         if (self.tableWidget.columnCount() < 6):
             self.tableWidget.setColumnCount(6)
         __qtablewidgetitem5 = QTableWidgetItem()
@@ -1537,7 +1403,7 @@ class Ui_dashboard(object):
         self.tableWidget.setSortingEnabled(True)
         self.tableWidget.horizontalHeader().setCascadingSectionResizes(True)
         self.tableWidget.horizontalHeader().setMinimumSectionSize(60)
-        self.tableWidget.horizontalHeader().setDefaultSectionSize(150)
+        self.tableWidget.horizontalHeader().setDefaultSectionSize(200)
         self.tableWidget.horizontalHeader().setStretchLastSection(True)
         self.tableWidget.verticalHeader().setVisible(False)
         self.tableWidget.verticalHeader().setCascadingSectionResizes(True)
@@ -1546,28 +1412,44 @@ class Ui_dashboard(object):
         self.tableWidget.verticalHeader().setProperty("showSortIndicator", True)
         self.tableWidget.verticalHeader().setStretchLastSection(False)
 
-        self.horizontalLayout_9.addWidget(self.tableWidget)
+        self.verticalLayout_12.addWidget(self.tableWidget)
 
 
-        self.horizontalLayout_5.addWidget(self.rigth_frame)
+        self.verticalLayout_9.addWidget(self.frame_13)
 
         self.stackedWidget.addWidget(self.search)
         self.mail = QWidget()
         self.mail.setObjectName(u"mail")
-        self.mail.setMinimumSize(QSize(1446, 0))
-        self.mail.setMaximumSize(QSize(1446, 950))
+        self.mail.setMinimumSize(QSize(1262, 0))
+        self.mail.setMaximumSize(QSize(1262, 950))
         self.verticalLayout_4 = QVBoxLayout(self.mail)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
-        self.frame_7 = QFrame(self.mail)
+        self.verticalLayout_4.setContentsMargins(-1, -1, 0, -1)
+        self.frame_8 = QFrame(self.mail)
+        self.frame_8.setObjectName(u"frame_8")
+        self.frame_8.setFrameShape(QFrame.StyledPanel)
+        self.frame_8.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_6 = QHBoxLayout(self.frame_8)
+        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
+        self.horizontalLayout_6.setContentsMargins(0, 0, 0, 0)
+        self.frame_9 = QFrame(self.frame_8)
+        self.frame_9.setObjectName(u"frame_9")
+        self.frame_9.setStyleSheet(u"")
+        self.frame_9.setFrameShape(QFrame.NoFrame)
+        self.frame_9.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_13 = QVBoxLayout(self.frame_9)
+        self.verticalLayout_13.setObjectName(u"verticalLayout_13")
+        self.verticalLayout_13.setContentsMargins(0, 0, 5, 0)
+        self.frame_7 = QFrame(self.frame_9)
         self.frame_7.setObjectName(u"frame_7")
-        self.frame_7.setMinimumSize(QSize(0, 160))
-        self.frame_7.setMaximumSize(QSize(16777215, 160))
+        self.frame_7.setMinimumSize(QSize(0, 90))
+        self.frame_7.setMaximumSize(QSize(16777215, 100))
         self.frame_7.setStyleSheet(u"")
-        self.frame_7.setFrameShape(QFrame.StyledPanel)
+        self.frame_7.setFrameShape(QFrame.NoFrame)
         self.frame_7.setFrameShadow(QFrame.Raised)
         self.label_notification_2 = QLabel(self.frame_7)
         self.label_notification_2.setObjectName(u"label_notification_2")
-        self.label_notification_2.setGeometry(QRect(0, 0, 891, 151))
+        self.label_notification_2.setGeometry(QRect(0, 0, 891, 81))
         self.label_notification_2.setFont(font3)
         self.label_notification_2.setStyleSheet(u"QLabel{\n"
 "	color: rgb(255, 255, 255);\n"
@@ -1579,7 +1461,7 @@ class Ui_dashboard(object):
         self.label_notification_2.setWordWrap(True)
         self.label_notification_3 = QLabel(self.frame_7)
         self.label_notification_3.setObjectName(u"label_notification_3")
-        self.label_notification_3.setGeometry(QRect(920, 0, 501, 151))
+        self.label_notification_3.setGeometry(QRect(920, 0, 321, 81))
         self.label_notification_3.setFont(font3)
         self.label_notification_3.setStyleSheet(u"QLabel{\n"
 "	color: rgb(255, 255, 255);\n"
@@ -1590,13 +1472,15 @@ class Ui_dashboard(object):
         self.label_notification_3.setWordWrap(True)
         self.student_data = QLineEdit(self.frame_7)
         self.student_data.setObjectName(u"student_data")
-        self.student_data.setGeometry(QRect(30, 20, 831, 51))
+        self.student_data.setGeometry(QRect(20, 20, 371, 45))
+        self.student_data.setMinimumSize(QSize(0, 45))
+        self.student_data.setMaximumSize(QSize(16777215, 45))
         self.student_data.setFont(font4)
         self.student_data.setStyleSheet(u"QLineEdit{\n"
 "	color: rgb(255, 255, 255);\n"
 "	border: 2px solid  rgb(45, 45, 45);\n"
-"	border-radius:15px;\n"
-"	padding-left: 50px;\n"
+"	border-radius:10px;\n"
+"	padding-left: 10px;\n"
 "}\n"
 "\n"
 "QLineEdit:hover{\n"
@@ -1609,7 +1493,9 @@ class Ui_dashboard(object):
         self.student_data.setClearButtonEnabled(True)
         self.btn_load_data = QPushButton(self.frame_7)
         self.btn_load_data.setObjectName(u"btn_load_data")
-        self.btn_load_data.setGeometry(QRect(30, 90, 191, 51))
+        self.btn_load_data.setGeometry(QRect(410, 20, 121, 45))
+        self.btn_load_data.setMinimumSize(QSize(0, 45))
+        self.btn_load_data.setMaximumSize(QSize(16777215, 45))
         self.btn_load_data.setFont(font4)
         self.btn_load_data.setStyleSheet(u"QPushButton{\n"
 "	color: rgb(255, 255, 255);\n"
@@ -1625,14 +1511,16 @@ class Ui_dashboard(object):
 "QPushButton:pressed{\n"
 "	border: 2px solid rgb(255,255,255);	\n"
 "}")
-        icon13 = QIcon()
-        icon13.addFile(u":/icons/asset/upload.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_load_data.setIcon(icon13)
+        icon12 = QIcon()
+        icon12.addFile(u":/icons/asset/upload.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_load_data.setIcon(icon12)
         self.btn_load_data.setIconSize(QSize(30, 30))
         self.btn_load_data.setFlat(True)
         self.btn_send_qr_mail = QPushButton(self.frame_7)
         self.btn_send_qr_mail.setObjectName(u"btn_send_qr_mail")
-        self.btn_send_qr_mail.setGeometry(QRect(360, 90, 191, 51))
+        self.btn_send_qr_mail.setGeometry(QRect(550, 20, 131, 45))
+        self.btn_send_qr_mail.setMinimumSize(QSize(0, 45))
+        self.btn_send_qr_mail.setMaximumSize(QSize(16777215, 45))
         self.btn_send_qr_mail.setFont(font4)
         self.btn_send_qr_mail.setStyleSheet(u"QPushButton{\n"
 "	color: rgb(255, 255, 255);\n"
@@ -1648,18 +1536,16 @@ class Ui_dashboard(object):
 "QPushButton:pressed{\n"
 "	border: 2px solid rgb(255,255,255);	\n"
 "}")
-        icon14 = QIcon()
-        icon14.addFile(u":/icons/asset/send.svg", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_send_qr_mail.setIcon(icon14)
+        icon13 = QIcon()
+        icon13.addFile(u":/icons/asset/send.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_send_qr_mail.setIcon(icon13)
         self.btn_send_qr_mail.setIconSize(QSize(30, 30))
         self.btn_send_qr_mail.setFlat(True)
-        self.label_26 = QLabel(self.frame_7)
-        self.label_26.setObjectName(u"label_26")
-        self.label_26.setGeometry(QRect(40, 30, 31, 31))
-        self.label_26.setPixmap(QPixmap(u":/icons/asset/file-text.svg"))
         self.btn_sender_details = QPushButton(self.frame_7)
         self.btn_sender_details.setObjectName(u"btn_sender_details")
-        self.btn_sender_details.setGeometry(QRect(670, 90, 191, 51))
+        self.btn_sender_details.setGeometry(QRect(700, 20, 171, 45))
+        self.btn_sender_details.setMinimumSize(QSize(0, 45))
+        self.btn_sender_details.setMaximumSize(QSize(16777215, 45))
         self.btn_sender_details.setFont(font4)
         self.btn_sender_details.setStyleSheet(u"QPushButton{\n"
 "	color: rgb(255, 255, 255);\n"
@@ -1679,24 +1565,17 @@ class Ui_dashboard(object):
         self.btn_sender_details.setIconSize(QSize(30, 30))
         self.btn_sender_details.setFlat(True)
 
-        self.verticalLayout_4.addWidget(self.frame_7)
+        self.verticalLayout_13.addWidget(self.frame_7)
 
-        self.frame_8 = QFrame(self.mail)
-        self.frame_8.setObjectName(u"frame_8")
-        self.frame_8.setFrameShape(QFrame.StyledPanel)
-        self.frame_8.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_6 = QHBoxLayout(self.frame_8)
-        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
-        self.horizontalLayout_6.setContentsMargins(0, 0, 0, 0)
-        self.frame_9 = QFrame(self.frame_8)
-        self.frame_9.setObjectName(u"frame_9")
-        self.frame_9.setStyleSheet(u"")
-        self.frame_9.setFrameShape(QFrame.NoFrame)
-        self.frame_9.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_13 = QVBoxLayout(self.frame_9)
-        self.verticalLayout_13.setObjectName(u"verticalLayout_13")
-        self.verticalLayout_13.setContentsMargins(0, 0, 0, 0)
-        self.load_mail_data_table = QTableWidget(self.frame_9)
+        self.frame_12 = QFrame(self.frame_9)
+        self.frame_12.setObjectName(u"frame_12")
+        self.frame_12.setFrameShape(QFrame.NoFrame)
+        self.frame_12.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_15 = QVBoxLayout(self.frame_12)
+        self.verticalLayout_15.setSpacing(3)
+        self.verticalLayout_15.setObjectName(u"verticalLayout_15")
+        self.verticalLayout_15.setContentsMargins(0, 0, 0, 0)
+        self.load_mail_data_table = QTableWidget(self.frame_12)
         if (self.load_mail_data_table.columnCount() < 5):
             self.load_mail_data_table.setColumnCount(5)
         __qtablewidgetitem11 = QTableWidgetItem()
@@ -1720,12 +1599,16 @@ class Ui_dashboard(object):
 "	color: rgb(255, 255, 255);\n"
 "}")
         self.load_mail_data_table.setFrameShape(QFrame.NoFrame)
+        self.load_mail_data_table.setFrameShadow(QFrame.Plain)
         self.load_mail_data_table.setEditTriggers(QAbstractItemView.NoEditTriggers)
-        self.load_mail_data_table.horizontalHeader().setDefaultSectionSize(250)
+        self.load_mail_data_table.horizontalHeader().setDefaultSectionSize(230)
         self.load_mail_data_table.horizontalHeader().setProperty("showSortIndicator", True)
         self.load_mail_data_table.horizontalHeader().setStretchLastSection(True)
 
-        self.verticalLayout_13.addWidget(self.load_mail_data_table)
+        self.verticalLayout_15.addWidget(self.load_mail_data_table)
+
+
+        self.verticalLayout_13.addWidget(self.frame_12)
 
 
         self.horizontalLayout_6.addWidget(self.frame_9)
@@ -1743,6 +1626,22 @@ class Ui_dashboard(object):
 
         self.content_layout.addWidget(self.content)
 
+        self.btn_send_mail_2 = QPushButton(self.centralwidget)
+        self.btn_send_mail_2.setObjectName(u"btn_send_mail_2")
+        self.btn_send_mail_2.setGeometry(QRect(0, 800, 70, 70))
+        self.btn_send_mail_2.setMinimumSize(QSize(0, 70))
+        self.btn_send_mail_2.setMaximumSize(QSize(16777215, 70))
+        self.btn_send_mail_2.setStyleSheet(u"QPushButton{\n"
+"	background-color: rgb(35, 35, 35);\n"
+"	border: 0px solid;\n"
+"}\n"
+"")
+        icon14 = QIcon()
+        icon14.addFile(u":/icons/asset/help-circle.svg", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_send_mail_2.setIcon(icon14)
+        self.btn_send_mail_2.setIconSize(QSize(40, 40))
+        self.btn_send_mail_2.setCheckable(True)
+        self.btn_send_mail_2.setFlat(True)
         dashboard.setCentralWidget(self.centralwidget)
 #if QT_CONFIG(shortcut)
 #endif // QT_CONFIG(shortcut)
@@ -1766,21 +1665,18 @@ class Ui_dashboard(object):
         self.btn_search.setText("")
         self.btn_active_count.setText("")
         self.btn_send_mail.setText("")
-        self.btn_help.setText("")
         self.image.setText("")
         self.firstname.setText(QCoreApplication.translate("dashboard", u"Firstname", None))
-        self.middlename.setText(QCoreApplication.translate("dashboard", u"Middlename", None))
+        self.middlename.setText(QCoreApplication.translate("dashboard", u"Othername", None))
         self.lastname.setText(QCoreApplication.translate("dashboard", u"Lastname", None))
         self.refrence.setText(QCoreApplication.translate("dashboard", u"Reference", None))
         self.index.setText(QCoreApplication.translate("dashboard", u"Index", None))
         self.program.setText(QCoreApplication.translate("dashboard", u"Program", None))
         self.image_2.setText("")
         self.label_notification.setText(QCoreApplication.translate("dashboard", u"Notification", None))
-        self.camera_ip.setPlaceholderText(QCoreApplication.translate("dashboard", u"Camera Id/IP ?", None))
         self.btn_connect_detect.setText(QCoreApplication.translate("dashboard", u"Connect", None))
-        self.label_27.setText("")
         self.btn_disconnect.setText(QCoreApplication.translate("dashboard", u"Disconnect", None))
-        self.firstname_23.setText(QCoreApplication.translate("dashboard", u"Entry camera", None))
+        self.firstname_23.setText(QCoreApplication.translate("dashboard", u"Camera", None))
         self.firstname_24.setText("")
         self.btn_clear_label.setText(QCoreApplication.translate("dashboard", u"Reset", None))
         self.btn_open_database.setText(QCoreApplication.translate("dashboard", u"Create table", None))
@@ -1799,10 +1695,11 @@ class Ui_dashboard(object):
         self.label_42.setText("")
         self.btn_scan_range.setText(QCoreApplication.translate("dashboard", u"Scan", None))
         self.scan_range.setPlaceholderText(QCoreApplication.translate("dashboard", u"Scan range ?", None))
-        self.active_count_filepath.setPlaceholderText(QCoreApplication.translate("dashboard", u"Filename?", None))
-        self.btn_active_count_save.setText(QCoreApplication.translate("dashboard", u"Save", None))
         self.label_31.setText("")
         self.btn_active_load_data.setText(QCoreApplication.translate("dashboard", u"Load", None))
+        self.active_count_filepath.setPlaceholderText(QCoreApplication.translate("dashboard", u"Filename?", None))
+        self.btn_active_count_save.setText(QCoreApplication.translate("dashboard", u"Save", None))
+        self.btn_load_refresh.setText(QCoreApplication.translate("dashboard", u"Refresh", None))
         ___qtablewidgetitem = self.tableWidget_count.horizontalHeaderItem(0)
         ___qtablewidgetitem.setText(QCoreApplication.translate("dashboard", u"Name", None));
         ___qtablewidgetitem1 = self.tableWidget_count.horizontalHeaderItem(1)
@@ -1813,24 +1710,16 @@ class Ui_dashboard(object):
         ___qtablewidgetitem3.setText(QCoreApplication.translate("dashboard", u"Program", None));
         ___qtablewidgetitem4 = self.tableWidget_count.horizontalHeaderItem(4)
         ___qtablewidgetitem4.setText(QCoreApplication.translate("dashboard", u"Appearance", None));
-        self.db_refrence.setText(QCoreApplication.translate("dashboard", u"Reference", None))
-        self.db_image_data.setText("")
-        self.db_lastname.setText(QCoreApplication.translate("dashboard", u"Lastname", None))
-        self.db_middlename.setText(QCoreApplication.translate("dashboard", u"Middlename", None))
-        self.db_firstname.setText(QCoreApplication.translate("dashboard", u"Firstname", None))
-        self.db_index.setText(QCoreApplication.translate("dashboard", u"Index", None))
-        self.db_programe.setText(QCoreApplication.translate("dashboard", u"Program", None))
-        self.search_box.setPlaceholderText(QCoreApplication.translate("dashboard", u"Search here?", None))
-        self.btn_search_page.setText(QCoreApplication.translate("dashboard", u"Search", None))
+        self.search_box.setPlaceholderText(QCoreApplication.translate("dashboard", u"Reference here?", None))
         self.label_29.setText("")
-        self.image_3.setText("")
-        self.db_start_date.setPlaceholderText(QCoreApplication.translate("dashboard", u"Start date?", None))
-        self.label_25.setText("")
+        self.btn_search_page.setText(QCoreApplication.translate("dashboard", u"Search", None))
         self.label_30.setText("")
-        self.btn_csv.setText(QCoreApplication.translate("dashboard", u"Export Data", None))
-        self.label_40.setText("")
         self.filename.setPlaceholderText(QCoreApplication.translate("dashboard", u"Filename?", None))
+        self.btn_csv.setText(QCoreApplication.translate("dashboard", u"Export", None))
         self.btn_backup.setText(QCoreApplication.translate("dashboard", u"Backup", None))
+        self.label_32.setText("")
+        self.report_date.setDisplayFormat(QCoreApplication.translate("dashboard", u"yyyy-MM-dd", None))
+        self.search_by_date.setText("")
         ___qtablewidgetitem5 = self.tableWidget.horizontalHeaderItem(0)
         ___qtablewidgetitem5.setText(QCoreApplication.translate("dashboard", u"Name", None));
         ___qtablewidgetitem6 = self.tableWidget.horizontalHeaderItem(1)
@@ -1845,10 +1734,10 @@ class Ui_dashboard(object):
         ___qtablewidgetitem10.setText(QCoreApplication.translate("dashboard", u"Time Stamp", None));
         self.label_notification_2.setText("")
         self.label_notification_3.setText(QCoreApplication.translate("dashboard", u"Notification", None))
+        self.student_data.setText("")
         self.student_data.setPlaceholderText(QCoreApplication.translate("dashboard", u"Filename?", None))
         self.btn_load_data.setText(QCoreApplication.translate("dashboard", u"Browse", None))
         self.btn_send_qr_mail.setText(QCoreApplication.translate("dashboard", u"Send mail", None))
-        self.label_26.setText("")
         self.btn_sender_details.setText(QCoreApplication.translate("dashboard", u"Sender details", None))
         ___qtablewidgetitem11 = self.load_mail_data_table.horizontalHeaderItem(0)
         ___qtablewidgetitem11.setText(QCoreApplication.translate("dashboard", u"Name", None));
@@ -1860,5 +1749,6 @@ class Ui_dashboard(object):
         ___qtablewidgetitem14.setText(QCoreApplication.translate("dashboard", u"Program", None));
         ___qtablewidgetitem15 = self.load_mail_data_table.horizontalHeaderItem(4)
         ___qtablewidgetitem15.setText(QCoreApplication.translate("dashboard", u"Email", None));
+        self.btn_send_mail_2.setText("")
     # retranslateUi
 
