@@ -1,7 +1,5 @@
-from PySide2.QtWidgets import *
-from PySide2.QtCore import *
-from PySide2.QtGui import *
-from cv2 import VideoCapture
+from packages.pyqt import *
+from packages.processing import *
 
 class ActiveCameras(QThread):
     def __init__(self,scan_range):
