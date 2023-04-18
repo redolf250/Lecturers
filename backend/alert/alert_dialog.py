@@ -1,12 +1,10 @@
-from PySide2 import QtCore, QtWidgets
-from PySide2.QtGui import (QColor)
-from PySide2.QtWidgets import *
+from packages.pyqt import *
+from packages.system import *
+from packages.ui_files import *
 
-from alert.ui_alert_dialog import Ui_AlertDialog
-
-class AlertDialog(QtWidgets.QDialog):
+class AlertDialog(QDialog):
     def __init__(self):
-        QtWidgets.QDialog.__init__(self)
+        QDialog.__init__(self)
         self.ui_alert = Ui_AlertDialog()
         self.ui_alert.setupUi(self)
         self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
