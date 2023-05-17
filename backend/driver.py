@@ -93,11 +93,11 @@ class MainWindow(QMainWindow):
 
     def load_active_count(self):
         table = self.ui.database_tables_active.currentText()
-        details = self.query_database("SELECT DISTINCT student_reference FROM "+table)
+        details = self.query_database(f"SELECT DISTINCT student_reference FROM {table}")
         student_list = []
         for student_reference in range(len(details)):
             result= self.query_database("SELECT student_name,student_index,student_reference,student_program,"
-            +"COUNT(student_reference) as active FROM tb_attendance WHERE student_reference="
+            +"COUNT(student_reference) as active FROM "+table+" WHERE student_reference="
             +details[student_reference][0]+" ORDER BY student_name DESC")
             student_list.append(result[0])
             self.active_count_table(student_list)
@@ -127,7 +127,7 @@ class MainWindow(QMainWindow):
         table=self.ui.tableWidget_count.item(0,0)
         filename = self.ui.active_count_filepath.text()
         date=dt.now().strftime('_%d_%B_%Y-%I_%M_%S_%p')
-        path = 'C:\\ProgramData\\iLecturers\\data\\csv_export\\'+filename+date+'.csv'
+        path = 'C:\\ProgramData\\iAttend\\data\\csv_export\\'+filename+date+'.csv'
         if table and filename:
             details=self.load_active_count()
             data = pd.DataFrame(details)
@@ -258,7 +258,10 @@ class MainWindow(QMainWindow):
    
     def refresh_tables(self):
         self.ui.database_tables.clear()
+        self.ui.database_tables_search.clear()
         self.ui.database_tables.addItems(self.get_tables())
+        self.ui.database_tables_search.addItems(self.get_tables())
+        
 
     def create_database(self):
         con = sqlite3.connect(self.get_path())
