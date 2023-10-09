@@ -1,6 +1,5 @@
 ################################################################################
 ##
-## BY: ASAMANING Redolf
 ## PROJECT MADE WITH: Qt Designer and PySide2
 ## V: 1.0.0
 ##
@@ -127,7 +126,7 @@ class MainWindow(QMainWindow):
         table=self.ui.tableWidget_count.item(0,0)
         filename = self.ui.active_count_filepath.text()
         date=dt.now().strftime('_%d_%B_%Y-%I_%M_%S_%p')
-        path = 'C:\\ProgramData\\iAttend\\data\\csv_export\\'+filename+date+'.csv'
+        path = 'C:\\ProgramData\\iLecturers\\csv_export\\'+filename+date+'.csv'
         if table and filename:
             details=self.load_active_count()
             data = pd.DataFrame(details)
@@ -142,7 +141,7 @@ class MainWindow(QMainWindow):
             self.alert.show()
     
     def get_mail_content(self):
-        path = 'C:\\ProgramData\\iLecturers\\data\\email_details\\content.txt'
+        path = 'C:\\ProgramData\\iLecturers\\email_details\\content.txt'
         if os.path.exists(path):
             with open(path,'r') as f:
                 details = f.read()
@@ -195,7 +194,7 @@ class MainWindow(QMainWindow):
                 if self.connected_to_internet()==True:
                     student_json=self.convert_to_json(student)
                     image = qrcode.make(student_json)
-                    image_path='C:\\ProgramData\\iAttend\\data\\qr_code\\'+register.index_+".png"
+                    image_path='C:\\ProgramData\\iLecturers\\qr_code\\'+register.index_+".png"
                     image.save(image_path)
                     content = self.get_mail_content()
                     content=content.replace('name',row[2])
@@ -270,7 +269,7 @@ class MainWindow(QMainWindow):
         con.commit()
 
     def get_path(self):
-        return 'C:\\ProgramData\\iAttend\\data\\database\\attendance_system.db'
+        return 'C:\\ProgramData\\iLecturers\\database\\attendance_system.db'
 
     def get_tables(self):
         con = sqlite3.connect(self.get_path())
@@ -282,7 +281,7 @@ class MainWindow(QMainWindow):
         return details
 
     def backup_history(self):
-        path =Path('C:\\ProgramData\\iAttend\\data\\backup\\backup_history.txt')
+        path =Path('C:\\ProgramData\\iLecturers\\backup\\backup_history.txt')
         path.touch(exist_ok=True)
         file = open(path)
         time =dt.now().time().strftime('%I:%M:%S %p')
@@ -293,7 +292,7 @@ class MainWindow(QMainWindow):
             file.close()         
 
     def backup_database(self):
-        path='C:\\ProgramData\\iLecturers\\data\\backup'
+        path='C:\\ProgramData\\iLecturers\\backup'
         if os.path.exists(path):
             shutil.copy2(self.get_path(),path)
             self.backup_history()
@@ -347,7 +346,7 @@ class MainWindow(QMainWindow):
         table=self.ui.tableWidget.item(0,0)
         filename = self.ui.filename.text()
         date=dt.now().strftime('_%d_%B_%Y-%I_%M_%S_%p')
-        path = 'C:\\ProgramData\\iAttend\\data\\csv_export\\'+filename+date+'.csv'
+        path = 'C:\\ProgramData\\iLecturers\\csv_export\\'+filename+date+'.csv'
         if table and filename:
             details=self.query_database_for_data()
             data = pd.DataFrame(details)
@@ -662,8 +661,8 @@ class Splash_screen(QMainWindow):
         self.show()
 
     def create_program_data_dir(self):
-        root_dir = 'C:\\ProgramData\\iAttend\\data'
-        list =('csv_export','backup','qr_code','email_details')
+        root_dir = 'C:\\ProgramData\\iLecturers\\'
+        list =('csv_export','backup','qr_code','email_details','database')
         if not os.path.exists(root_dir):
             os.makedirs(root_dir)
         for item in list:
@@ -673,7 +672,7 @@ class Splash_screen(QMainWindow):
         self.create_files()
 
     def create_files(self):
-        details_path =Path('C:\\ProgramData\\iAttend\\data\\email_details\\details.json')
+        details_path =Path('C:\\ProgramData\\iLecturers\\email_details\\details.json')
         json_data = {
             "sender":"Sender",
             "subject":"Subject",
@@ -696,7 +695,7 @@ class Splash_screen(QMainWindow):
             access the facility. 
                 Attend Today, Acheive Tomorrow!
                                             Thank you! """
-        content_path =Path('C:\\ProgramData\\iLecturers\\data\\email_details\\content.txt')
+        content_path =Path('C:\\ProgramData\\iLecturers\\email_details\\content.txt')
         content_path.touch(exist_ok=True)
         content_file = open(content_path)
         if os.path.exists(content_path):
