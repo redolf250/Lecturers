@@ -52,24 +52,26 @@ To get started with the QR Code-Based Attendance Tracking System, follow these s
 4. [Data Management](#data-management): Manage student and attendance data efficiently.
 
 ## Installation
+To get started with the QR Code-Based Attendance Tracking System, follow these steps:
 
-[Provide installation instructions here, including any dependencies and system requirements.]
+1. **Visit the Release Page**: Head over to the [Release Page](https://github.com/your-username/your-repo/releases) on this GitHub repository.
 
+2. **Download a Specific Release**: Browse the list of available releases and select the version you'd like to download. We recommend choosing the latest stable release for the most up-to-date features and improvements.
+
+3. **Download and Extract**: Click on your chosen release to download the associated ZIP or tar.gz file. Once downloaded, extract the contents to your preferred location on your local machine or server.
+
+4. **Run the the iAttend.exe**
 ## Configuration
 
 [Explain how to configure the application, including database setup, email settings, and other customizations.]
 
 ## Usage
-
-[Provide usage instructions, including how to scan QR codes, retrieve records, generate QR codes, and export attendance data.]
+Contact me for a proper walk-through of the system
 
 ## Data Management
 
-[Explain how to create and manage data tables, retrieve bulk attendance data, and export data to CSV format.]
-
 ## Contributing
-
-[If your project is open-source and you welcome contributions, provide guidelines and instructions for potential contributors.]
+You are always welcome to contribute to this piece of work
 
 ## License
 
@@ -79,14 +81,13 @@ To get started with the QR Code-Based Attendance Tracking System, follow these s
 
 [Provide contact information or links to support resources, such as a helpdesk or community forum.]
 
-We hope you find the QR Code-Based Attendance Tracking System valuable for your educational institution. If you have any questions or encounter issues, please don't hesitate to reach out for assistance.
+![Luauncher](https://github.com/redolf250/Lecturers/tree/master/images/launcher.png)
+![Home](https://github.com/redolf250/Lecturers/tree/master/images/home.png)
+![Retrive record ](\https://github.com/redolf250/Lecturers/tree/master/images/search.png)
+![Analyse]([link_to_image_4](https://github.com/redolf250/Lecturers/tree/master/images/load.png)
+![Send bulk mails](https://github.com/redolf250/Lecturers/tree/master/images/mail.png)
+![Set mail properties](https://github.com/redolf250/Lecturers/tree/master/images/details.png)
+
+We hope you find the QR Code-Based Attendance Tracking System valuable for your educational institution. If you have any questions or encounter issues, please don't hesitate to reach out for help.
 
 Happy tracking!
-
-
-![Application Image 1](link_to_image_1)
-![Application Image 2](link_to_image_2)
-![Application Image 3](link_to_image_3)
-![Application Image 4](link_to_image_4)
-![Application Image 5](link_to_image_5)
-
