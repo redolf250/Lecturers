@@ -1,2 +1,4 @@
 test_code/
 _pycache_/
+/build
+/dist
