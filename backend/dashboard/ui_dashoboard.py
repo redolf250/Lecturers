@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'dashoboardeXqlQE.ui'
+## Form generated from reading UI file 'dashoboardWOkuGx.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.14.1
 ##
@@ -1657,7 +1657,7 @@ class Ui_dashboard(object):
     def retranslateUi(self, dashboard):
         dashboard.setWindowTitle(QCoreApplication.translate("dashboard", u"MainWindow", None))
         self.label.setText("")
-        self.label_4.setText(QCoreApplication.translate("dashboard", u"iAttend", None))
+        self.label_4.setText(QCoreApplication.translate("dashboard", u"iTrack", None))
         self.btn_maximize.setText("")
         self.btn_minimize.setText("")
         self.btn_close.setText("")
