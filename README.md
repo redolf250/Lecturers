@@ -82,6 +82,11 @@ You are always welcome to contribute to this piece of work
 [Provide contact information or links to support resources, such as a helpdesk or community forum.]
 
 ![Luauncher](https://github.com/redolf250/Lecturers/tree/master/images/launcher.png)
+![Home](https://github.com/redolf250/Lecturers/tree/master/images/home.png)
+![Retrive record ](\https://github.com/redolf250/Lecturers/tree/master/images/search.png)
+![Analyse]([link_to_image_4](https://github.com/redolf250/Lecturers/tree/master/images/load.png)
+![Send bulk mails](https://github.com/redolf250/Lecturers/tree/master/images/mail.png)
+![Set mail properties](https://github.com/redolf250/Lecturers/tree/master/images/details.png)
 
 
 We hope you find the QR Code-Based Attendance Tracking System valuable for your educational institution. If you have any questions or encounter issues, please don't hesitate to reach out for help.
