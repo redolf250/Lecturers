@@ -35,7 +35,7 @@ class Database(QDialog):
         self.clickPosition = event.globalPos()
     
     def get_path(self):
-        return 'C:\\ProgramData\\iAttend\\data\\database\\attendance_system.db'
+        return 'C:\\ProgramData\\iLecturers\\database\\attendance_system.db'
 
     def create_table(self):
         data = self.ui.add_program.text()
