@@ -45,7 +45,7 @@ class Mail(QDialog):
         return subject, from_email, from_, password
 
     def set_sender_details(self):
-        details=self.load_data('C:\\ProgramData\\iAttend\\data\\email_details\\details.json')
+        details=self.load_data('C:\\ProgramData\\iLecturers\\email_details\\details.json')
         self.ui_mail.email_from.setText(details['sender'])
         self.ui_mail.email_sender.setText(details['mail'])
         self.ui_mail.email_subject.setText(details['subject'])
